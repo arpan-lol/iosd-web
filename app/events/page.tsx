@@ -58,6 +58,16 @@ export default function EventsPage() {
 
       </section>
 
+      {/* Upcoming Event */}
+      {UPCOMING_EVENT && (
+        <section className="container mx-auto px-4 pt-8 pb-4">
+          <h2 className="mb-8 text-3xl font-light tracking-tight">
+            What's Next
+          </h2>
+          <UpcomingEventCard event={UPCOMING_EVENT} />
+        </section>
+      )}
+
       {/* Featured */}
       <section className="container mx-auto px-4 py-24">
         <h2 className="mb-12 text-3xl font-light tracking-tight">
@@ -92,10 +102,6 @@ export default function EventsPage() {
           ))}
         </div>
       </section>
-
-      {UPCOMING_EVENT && (
-        <UpcomingEventCard event={UPCOMING_EVENT} />
-      )}
 
       {/* More Events */}
 

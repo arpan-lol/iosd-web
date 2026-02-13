@@ -16,8 +16,8 @@ export function UpcomingEventCard({ event }: UpcomingEventProps) {
   const mouseY = useMotionValue(Infinity)
 
   return (
-    <section 
-      className="container mx-auto px-4 md:py-20"
+    <div 
+      className="max-w-5xl mx-auto cursor-target"
       onMouseMove={(e) => {
         mouseX.set(e.pageX)
         mouseY.set(e.pageY)
@@ -27,7 +27,6 @@ export function UpcomingEventCard({ event }: UpcomingEventProps) {
         mouseY.set(Infinity)
       }}
     >
-      <div className="max-w-5xl mx-auto">
         <div
           className={cn(
             "relative overflow-hidden border border-border",
@@ -101,8 +100,7 @@ export function UpcomingEventCard({ event }: UpcomingEventProps) {
             )}
           </div>
         </div>
-      </div>
-    </section>
+    </div>
   )
 }
 

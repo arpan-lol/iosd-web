@@ -16,7 +16,8 @@ export function EventPreviewCard({ event, priority, onClick }: EventPreviewCardP
       onClick={onClick}
       className={cn(
         "group relative cursor-pointer overflow-hidden bg-background",
-        "border border-border"
+        "border border-border",
+        "cursor-target"
       )}
     >
         {/* Image */}

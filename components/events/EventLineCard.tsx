@@ -38,7 +38,7 @@ export const EventLineCard = ({
           bg-surface-1 hover:bg-surface-2
           transition-all duration-300
           hover:scale-[1.02] hover:shadow-[var(--shadow-glow)]
-          hover:border-accent/30
+          hover:border-accent/30 cursor-target
         `}
                 style={{ animationDelay: `${delay}ms` }}
             >

@@ -59,7 +59,7 @@ export const EventLine = () => {
                     );
                 })}
 
-                {/* Upcoming Event */}
+                {/* Upcoming Event
                 {UPCOMING_EVENT && (
                     <div className="relative">
                         <div className="absolute left-1/2 transform -translate-x-1/2 z-[1] hidden md:flex">
@@ -92,7 +92,7 @@ export const EventLine = () => {
                             />
                         </div>
                     </div>
-                )}
+                )} */}
             </div>
         </div>
     );

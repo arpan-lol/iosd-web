@@ -61,10 +61,10 @@ export type UpcomingEvent = {
 
 export const UPCOMING_EVENT: UpcomingEvent | null = {
   title: "IMPULSE 26",
-  date: "Feb 2026",
+  date: "Mar 2026",
   description:
     "The flagship tech fest of IOSD MAIT",
   coverImage: "/gallery/impulse-25/cover.jpg",
-  registerUrl: "https://arpantaneja.dev",
+  registerUrl: "",
   registrationOpen: false,
 }
