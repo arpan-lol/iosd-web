@@ -5,27 +5,7 @@ import type React from "react"
 import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from "framer-motion"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-
-const testimonials = [
-  {
-    quote: "MAIT's best tech society!.",
-    author: "Modi Ji",
-    role: "Prime Minister",
-    company: "IOSD",
-  },
-  {
-    quote: "anpks'idaj;odsi",
-    author: "asdjaksda",
-    role: "asdmklasd",
-    company: "MAIT",
-  },
-  {
-    quote: "aap yaha aajayein",
-    author: "Farahan Akhtar (validation by Javed Akhtar)",
-    role: "Actor",
-    company: "IOSD",
-  },
-]
+import { TESTIMONIALS } from "@/lib/config"
 
 export function Testimonial() {
   const [activeIndex, setActiveIndex] = useState(0)
@@ -53,15 +33,15 @@ export function Testimonial() {
     }
   }
 
-  const goNext = () => setActiveIndex((prev) => (prev + 1) % testimonials.length)
-  const goPrev = () => setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length)
+  const goNext = () => setActiveIndex((prev) => (prev + 1) % TESTIMONIALS.length)
+  const goPrev = () => setActiveIndex((prev) => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length)
 
   useEffect(() => {
     const timer = setInterval(goNext, 6000)
     return () => clearInterval(timer)
   }, [])
 
-  const current = testimonials[activeIndex]
+  const current = TESTIMONIALS[activeIndex]
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-background overflow-hidden">
@@ -104,7 +84,7 @@ export function Testimonial() {
               <motion.div
                 className="absolute top-0 left-0 w-full bg-foreground origin-top"
                 animate={{
-                  height: `${((activeIndex + 1) / testimonials.length) * 100}%`,
+                  height: `${((activeIndex + 1) / TESTIMONIALS.length) * 100}%`,
                 }}
                 transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               />
@@ -200,7 +180,7 @@ export function Testimonial() {
               <div className="flex items-center gap-4">
                 <motion.button
                   onClick={goPrev}
-                  className="group relative w-12 h-12 rounded-full border border-border flex items-center justify-center overflow-hidden"
+                  className="group relative w-12 h-12 rounded-full border border-border flex items-center justify-center overflow-hidden cursor-target"
                   whileTap={{ scale: 0.95 }}
                 >
                   <motion.div
@@ -213,7 +193,7 @@ export function Testimonial() {
 
                 <motion.button
                   onClick={goNext}
-                  className="group relative w-12 h-12 rounded-full border border-border flex items-center justify-center overflow-hidden"
+                  className="group relative w-12 h-12 rounded-full border border-border flex items-center justify-center overflow-hidden cursor-target"
                   whileTap={{ scale: 0.95 }}
                 >
                   <motion.div
@@ -237,7 +217,7 @@ export function Testimonial() {
           >
             {[...Array(10)].map((_, i) => (
               <span key={i} className="mx-8">
-                {testimonials.map((t) => t.company).join(" • ")} •
+                {TESTIMONIALS.map((t) => t.company).join(" • ")} •
               </span>
             ))}
           </motion.div>

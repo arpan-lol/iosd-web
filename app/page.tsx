@@ -123,18 +123,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="w-full">
-        <Testimonial />
-      </section>
-
       {/* Stats Section */}
       <section className="container mx-auto px-6 py-24 md:py-32">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
           {ABOUT_STATS.map((stat, index) => (
             <div
               key={index}
-              className="group relative border border-blue-500/30 md:border-border bg-background p-8 transition-all hover:-translate-y-1 hover:border-blue-500/30 shadow-[0_0_15px_rgba(59,130,246,0.1)] md:shadow-none"
+              className="group relative border border-blue-500/30 md:border-border bg-background p-8 transition-all hover:-translate-y-1 hover:border-blue-500/30 shadow-[0_0_15px_rgba(59,130,246,0.1)] md:shadow-none cursor-target"
             >
               <div className="absolute left-0 top-0 h-full w-[3px] bg-blue-500 md:bg-accent" />
 
@@ -153,7 +148,10 @@ export default function Home() {
         </div>
       </section>
 
-
+      {/* Testimonials Section */}
+      <section className="w-full">
+        <Testimonial />
+      </section>
 
       {/* Gallery Section */}
       <section className="container mx-auto px-4 py-24">
