@@ -1,3 +1,44 @@
+/**
+ * GALLERY CONFIG GUIDE
+ * ====================
+ * 
+ * HOW TO ADD IMAGES:
+ * 
+ * 1. EVENT IMAGES (linked to an event):
+ *    - Add image with the event's `id` in the `tags` array
+ *    - Example: tags: ["impulse-26", "hackathon", "winners"]
+ *    - These will appear in the event modal when clicking that event card
+ * 
+ * 2. STANDALONE IMAGES (not linked to any event):
+ *    - Just add image without any event id in tags
+ *    - Example: tags: ["community", "team-photo"]
+ *    - These will only appear in /gallery page, not in any event modal
+ * 
+ * FIELDS:
+ * - id: Unique number (just increment from last entry)
+ * - src: Image path (local: "/gallery/folder/image.jpg" or external URL)
+ * - alt: Accessibility text
+ * - description: Optional caption shown on hover
+ * - tags: Array of strings for filtering (include event.id to link to event)
+ * - height: Relative height for masonry layout (300-400 recommended)
+ * 
+ * TAG CONVENTIONS:
+ * - Event IDs: "impulse-25", "xplode-25" (kebab-case, matches events.ts)
+ * - Categories: "hackathon", "workshop", "seminar", "community"
+ * - Descriptive: "winners", "team-photo", "keynote"
+ * 
+ * GOTCHAS:
+ * - Event modal only shows images that have the event.id in their tags
+ * - If no images have the event.id tag, modal falls back to just coverImage
+ * - Tags are case-sensitive - keep them lowercase kebab-case
+ * - Gallery page filter shows ALL unique tags
+ * - One image can have multiple tags (appear in multiple filters/events)
+ * 
+ * HELPERS:
+ * - getAllTags(): Returns all unique tags for filter UI
+ * - getEventImages(eventId): Returns images for a specific event
+ */
+
 export interface GalleryImage {
   id: number;
   src: string;

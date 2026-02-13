@@ -61,7 +61,7 @@ export function GalleryModal({
       {/* Close button */}
       <button
         onClick={onClose}
-        className="absolute top-4 right-4 p-2 border border-border bg-background hover:bg-accent-glow transition-colors"
+        className="cursor-target absolute top-4 right-4 p-2 border border-border bg-background hover:bg-accent-glow transition-colors"
       >
         <X className="h-6 w-6" />
       </button>
@@ -73,7 +73,7 @@ export function GalleryModal({
             e.stopPropagation()
             navigatePrev()
           }}
-          className="absolute left-4 p-3 border border-border bg-background hover:bg-accent-glow transition-colors"
+          className="cursor-target absolute left-4 p-3 border border-border bg-background hover:bg-accent-glow transition-colors"
         >
           <ChevronLeft className="h-6 w-6" />
         </button>
@@ -86,7 +86,7 @@ export function GalleryModal({
             e.stopPropagation()
             navigateNext()
           }}
-          className="absolute right-4 p-3 border border-border bg-background hover:bg-accent-glow transition-colors"
+          className="cursor-target absolute right-4 p-3 border border-border bg-background hover:bg-accent-glow transition-colors"
         >
           <ChevronRight className="h-6 w-6" />
         </button>
