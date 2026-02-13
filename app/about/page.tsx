@@ -1,5 +1,6 @@
+"use client"
+
 import { cn } from "@/lib/utils";
-import { DotPattern } from "@/components/ui/dot-pattern";
 import { Github, Linkedin, Twitter } from "lucide-react"
 import Image from "next/image"
 import { JoinUsButton } from "@/components/join-us-button";
@@ -12,6 +13,7 @@ import {
 import { WordRotate } from "@/components/ui/word-rotate";
 import CompleteTeamSection from './complete';
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
+import { HeroSplitScreen } from "@/components/about/HeroSplitScreen";
 
 interface NotificationProps {
   name: string;
@@ -21,62 +23,11 @@ interface NotificationProps {
   time: string;
 }
 
-const Notification = ({ name, description, icon, color, time }: NotificationProps) => {
-  return (
-    <figure
-      className={cn(
-        "relative mx-auto min-h-fit w-full max-w-[400px] cursor-pointer overflow-hidden p-4",
-        "transition-all duration-200 ease-in-out hover:scale-[1.03]",
-        "border border-blue-500/40 md:border-border bg-background backdrop-blur-md shadow-[0_0_10px_rgba(59,130,246,0.05)] md:shadow-none"
-      )}
-    >
-      <div className="flex flex-row items-center gap-3">
-        <div
-          className="flex size-10 items-center justify-center"
-          style={{
-            backgroundColor: color,
-          }}
-        >
-          <span className="text-lg">{icon}</span>
-        </div>
-        <div className="flex flex-col overflow-hidden">
-          <figcaption className="flex flex-row items-center whitespace-pre font-medium">
-            <span className="text-sm sm:text-base">{name}</span>
-            <span className="mx-1">·</span>
-            <span className="text-xs text-muted-foreground">{time}</span>
-          </figcaption>
-          <p className="text-sm text-muted-foreground">
-            {description}
-          </p>
-        </div>
-      </div>
-    </figure>
-  );
-};
-
 export default function AboutPage() {
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-transparent">
       {/* Hero Section */}
-      <section className="relative flex h-[50vh] md:h-[60vh] items-center justify-center">
-        <div className="flex flex-col items-center gap-6 text-center px-6">
-          <h1 className="text-4xl sm:text-7xl font-light tracking-tight px-4 border-b border-blue-500/20 pb-4">
-            {ABOUT_CONTENT.hero.title}
-          </h1>
-          <p className="max-w-xl text-muted-foreground text-base sm:text-lg">
-            {ABOUT_CONTENT.hero.subtitle}
-          </p>
-          {/* <p className="max-w-[800px] text-lg font-medium text-primary">
-            &quot;We are a bunch of students pledged to enrich the development culture.&quot;
-          </p> */}
-        </div>
-        <DotPattern
-          className={cn(
-            "[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]",
-            "opacity-40"
-          )}
-        />
-      </section>
+      <HeroSplitScreen />
 
       {/* Mission & Vision Split */}
       <section className="container mx-auto px-4 pt-16 md:pt-24">

@@ -20,7 +20,7 @@ export default function GalleryPage() {
         <div className="min-h-screen bg-transparent">
             {/* Header */}
             <div className="container mx-auto px-6 py-24 flex flex-col items-center">
-                <h1 className="text-4xl sm:text-7xl font-light tracking-tight text-center mb-6 border-b border-blue-500/20 pb-2 px-6">
+                <h1 className="text-4xl sm:text-7xl font-light tracking-tight text-center mb-6 pb-2 px-6">
                     Gallery
                 </h1>
                 <p className="text-center text-muted-foreground text-base sm:text-lg mb-8 max-w-xl">

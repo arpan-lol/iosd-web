@@ -34,7 +34,7 @@ export default function EventsPage() {
       {/* Hero */}
       <section className="relative flex h-[60vh] items-center justify-center">
         <div className="z-10 flex flex-col items-center gap-6 text-center px-4">
-          <h1 className="text-4xl sm:text-7xl font-light tracking-tight border-b border-blue-500/20 pb-2 px-6">
+          <h1 className="text-4xl sm:text-7xl font-light tracking-tight pb-2 px-6">
             Events
           </h1>
 

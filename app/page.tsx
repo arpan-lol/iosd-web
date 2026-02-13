@@ -94,35 +94,40 @@ export default function Home() {
               ))}
             </div>
 
-            {/* Creative Link - Line that extends on hover */}
             <Link
               href="/about"
-              className="group/line inline-flex items-center gap-4 pt-8 cursor-target"
+              className="group/line inline-flex items-center gap-4 pt-8 pr-6 cursor-target"
               style={{ cursor: 'none' }}
             >
-              <div className="w-12 h-[1px] bg-muted-foreground group-hover/line:w-24 group-hover/line:bg-accent transition-all duration-500" />
+              <div className="w-12 h-[1px] bg-muted-foreground group-hover/line:bg-accent transition-colors duration-500" />
               <span className="mono text-xs tracking-widest group-hover/line:text-accent transition-colors duration-300">
                 READ MORE
               </span>
-              <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover/line:opacity-100 group-hover/line:translate-x-0 group-hover/line:text-accent transition-all duration-300" />
+              <ArrowRight className="w-4 h-4 group-hover/line:text-accent transition-all duration-300" />
             </Link>
           </div>
 
           {/* Accent Image */}
-          <div className="col-span-12 lg:col-span-5 relative">
+          <Link 
+            href="/about" 
+            className="col-span-12 lg:col-span-5 relative cursor-target"
+            style={{ cursor: 'none' }}
+          >
             <div className="relative aspect-[3/4] overflow-hidden group">
               <Image
                 src={ABOUT_PREVIEW.image}
                 alt="IOSD Community"
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
+                className="object-cover transition-all duration-700 group-hover:scale-105 grayscale sepia-[0.3] group-hover:grayscale-0 group-hover:sepia-0"
               />
+              {/* Golden tint overlay */}
+              <div className="absolute inset-0 bg-amber-500/15 mix-blend-overlay transition-opacity duration-700 group-hover:opacity-0 pointer-events-none" />
               <div className="absolute inset-0 border border-border pointer-events-none" />
               {/* Corner accent */}
               <div className="absolute -bottom-3 -left-3 w-6 h-6 border-l-2 border-b-2 border-accent" />
               <div className="absolute -top-3 -right-3 w-6 h-6 border-t-2 border-r-2 border-accent" />
             </div>
-          </div>
+          </Link>
         </div>
       </section>
 

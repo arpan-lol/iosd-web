@@ -3,14 +3,21 @@ import { cn } from "@/lib/utils"
 import { Marquee } from "@/components/ui/marquee"
 import { AvatarCircles } from "@/components/ui/avatar-circles"
 import { DotPattern } from "@/components/ui/dot-pattern"
-import { AlumniIndex } from "@/components/alumni/AlumniIndex"
-import { AlumniOutcomes } from "@/components/alumni/AlumniOutcomes"
-import { ALUMNI_OUTCOMES, NOTABLE_ALUMNI } from "@/lib/config"
+import { AlumniImpact } from "@/components/alumni/AlumniImpact"
+// import { NotableAlumni } from "@/components/alumni/NotableAlumni"
+import { NotableAlumniV1 } from "@/components/alumni/NotableAlumniV1"
+import { NotableAlumniV2 } from "@/components/alumni/NotableAlumniV2"
+import { NotableAlumniV3 } from "@/components/alumni/NotableAlumniV3"
+
 import Meta from "@/public/logos/meta-3.svg"
 import Uber from "@/public/logos/uber-15.svg"
 import Apple from "@/public/logos/Apple_logo_white.svg"
 import ZS from "@/public/logos/zs.png"
 import PayPal from "@/public/logos/paypal.png"
+import Swiggy from "@/public/logos/swiggy.png"
+import Zomato from "@/public/logos/zomato.png"
+import Ion from "@/public/logos/ion.png"
+import Yamaha from "@/public/logos/yamaha.png"
 
 const companies = [
   {
@@ -26,32 +33,24 @@ const companies = [
     logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
   },
   {
-    name: "Meta",
-    logo: Meta,
+    name: "Zomato",
+    logo: Zomato,
   },
   {
-    name: "Apple",
-    logo: Apple
+    name: "TCS ION",
+    logo: Ion
   },
   {
-    name: "Netflix",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg",
+    name: "Yamaha",
+    logo: Yamaha,
   },
   {
     name: "Uber",
     logo: Uber,
   },
   {
-    name: "Airbnb",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_Bélo.svg",
-  },
-  {
-    name: "Twitter",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Logo_of_Twitter.svg",
-  },
-  {
-    name: "LinkedIn",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
+    name: "Swiggy",
+    logo: Swiggy
   },
   {
     name: "PayPal",
@@ -77,12 +76,12 @@ export default function AlumniPage() {
       {/* Hero */}
       <section className="relative flex h-[60vh] items-center justify-center">
         <div className="z-10 flex flex-col items-center gap-6 text-center px-4">
-          <h1 className="text-4xl sm:text-7xl font-light tracking-tight border-b border-blue-500/20 pb-2 px-6">
+          <h1 className="text-4xl sm:text-7xl font-light tracking-tight pb-2 px-6">
             IOSD Alumni
           </h1>
 
           <p className="max-w-xl text-muted-foreground text-base sm:text-lg">
-            Generations of builders, engineers, and leaders -connected by craft.
+            Generations of builders, engineers, and leaders - connected by craft.
           </p>
 
           <div className="mt-4 flex items-center gap-6">
@@ -101,61 +100,10 @@ export default function AlumniPage() {
         />
       </section>
 
-      {/* Impact */}
-      <section className="container mx-auto px-4 py-24">
-        <h2 className="mb-16 text-3xl font-light tracking-tight text-center">
-          Our Impact
-        </h2>
-
-        <div className="grid gap-16 md:grid-cols-2">
-          <div className="border-b pb-4 border-blue-400/40">
-            <h3 className="text-xl font-medium">
-              Technical Excellence
-            </h3>
-            <p className="mt-4 text-muted-foreground">
-              Alumni from IOSD go on to build systems, products, and platforms
-              that serve millions -across industry, startups, and research.
-            </p>
-          </div>
-
-          <div className="border-b pb-4 border-blue-400/40">
-            <h3 className="text-xl font-medium">
-              Leadership & Ownership
-            </h3>
-            <p className="mt-4 text-muted-foreground">
-              From founding startups to leading teams, IOSD alumni carry
-              forward a culture of ownership, curiosity, and long-term thinking.
-            </p>
-          </div>
-
-          <div className="border-b pb-4 border-blue-400/40">
-            <h3 className="text-xl font-medium">
-              Global Footprint
-            </h3>
-            <p className="mt-4 text-muted-foreground">
-              Our community spans continents -contributing to organizations
-              and research institutions across the world.
-            </p>
-          </div>
-
-          <div className="border-b pb-4 border-blue-400/40">
-            <h3 className="text-xl font-medium">
-              Giving Back
-            </h3>
-            <p className="mt-4 text-muted-foreground">
-              Many alumni continue to mentor, teach, and guide newer members -
-              sustaining the ecosystem that shaped them.
-            </p>
-          </div>
-        </div>
-      </section>
-
-
-      {/* Notable Alumni */}
-      <AlumniIndex title="Notable Alumni" alumni={NOTABLE_ALUMNI} />
-
-      {/* Alumni Outcomes */}
-      <AlumniOutcomes outcomes={ALUMNI_OUTCOMES} />
+      <NotableAlumniV1 />
+      <NotableAlumniV2 />
+      <NotableAlumniV3 />
+      {/* <NotableAlumni /> */}
 
       {/* Companies */}
       <section className="py-24">
@@ -172,8 +120,8 @@ export default function AlumniPage() {
                 key={company.name}
                 className={cn(
                   "mx-6 flex h-16 w-40 items-center justify-center",
-                  "border border-blue-500/20 md:border-border text-sm mono",
-                  "text-muted-foreground hover:text-foreground transition hover:border-blue-500/40"
+                  "border border-accent/20 md:border-border text-sm mono",
+                  "text-muted-foreground hover:text-foreground transition hover:border-accent/40"
                 )}
               >
                 <Image src={company.logo} alt={company.name} width={34} height={34} className="max-w-fit max-h-6 mr-3" />
@@ -187,6 +135,9 @@ export default function AlumniPage() {
           <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-linear-to-l from-background" />
         </div>
       </section>
+
+      {/* Impact Section */}
+      <AlumniImpact />
     </div>
   )
 }
