@@ -2,13 +2,12 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
-import { X, ArrowRight, Sparkles } from 'lucide-react'
+import { X, ArrowRight, Rocket } from 'lucide-react'
 import Link from 'next/link'
 import { UPCOMING_EVENT } from '@/lib/config/events'
 import { cn } from '@/lib/utils'
 
 export function FloatingEventPromo() {
-  const [isVisible, setIsVisible] = useState(false)
   const [isDismissed, setIsDismissed] = useState(false)
 
   useEffect(() => {
@@ -16,28 +15,11 @@ export function FloatingEventPromo() {
     const dismissed = sessionStorage.getItem('event-promo-dismissed')
     if (dismissed) {
       setIsDismissed(true)
-      return
     }
-
-    // Show after scrolling past hero
-    const handleScroll = () => {
-      const scrollY = window.scrollY
-      const heroHeight = window.innerHeight * 0.6
-      
-      if (scrollY > heroHeight && !isDismissed) {
-        setIsVisible(true)
-      } else {
-        setIsVisible(false)
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [isDismissed])
+  }, [])
 
   const handleDismiss = () => {
     setIsDismissed(true)
-    setIsVisible(false)
     sessionStorage.setItem('event-promo-dismissed', 'true')
   }
 
@@ -45,7 +27,6 @@ export function FloatingEventPromo() {
 
   return (
     <AnimatePresence>
-      {isVisible && (
         <motion.div
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -97,7 +78,7 @@ export function FloatingEventPromo() {
               <div className="relative flex-shrink-0">
                 <div className="absolute inset-0 bg-accent/20 rounded-full blur-lg animate-pulse" />
                 <div className="relative w-10 h-10 flex items-center justify-center bg-accent/10 border border-accent/40">
-                  <Sparkles className="w-5 h-5 text-accent" />
+                  <Rocket className="w-5 h-5 text-accent" />
                 </div>
               </div>
 
@@ -146,7 +127,6 @@ export function FloatingEventPromo() {
             <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
           </div>
         </motion.div>
-      )}
     </AnimatePresence>
   )
 }

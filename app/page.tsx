@@ -112,10 +112,10 @@ export default function Home() {
                 src={ABOUT_PREVIEW.image}
                 alt="IOSD Community"
                 fill
-                className="object-cover transition-all duration-700 group-hover:scale-105 grayscale sepia-[0.3] group-hover:grayscale-0 group-hover:sepia-0"
+                className="object-cover transition-all duration-700 group-hover:scale-105"
               />
-              {/* tint overlay */}
-              <div className="absolute inset-0 bg-blue-500/15 mix-blend-overlay transition-opacity duration-700 group-hover:opacity-0 pointer-events-none" />
+              {/* tint overlay
+              <div className="absolute inset-0 bg-blue-500/15 mix-blend-overlay transition-opacity duration-700 group-hover:opacity-0 pointer-events-none" /> */}
               <div className="absolute inset-0 border border-border pointer-events-none" />
               {/* Corner accent */}
               <div className="absolute -bottom-3 -left-3 w-6 h-6 border-l-2 border-b-2 border-accent" />
