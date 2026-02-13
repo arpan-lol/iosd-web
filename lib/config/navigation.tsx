@@ -8,6 +8,7 @@ import {
   IconInfoCircle,
   IconPhoto,
   IconSchool,
+  IconRocket,
 } from '@tabler/icons-react'
 
 export const NAV_LINKS = [
@@ -16,6 +17,13 @@ export const NAV_LINKS = [
     href: '/',
     icon: (
       <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+    ),
+  },
+  {
+    title: 'Impulse',
+    href: '/impulse',
+    icon: (
+      <IconRocket className="h-full w-full text-neutral-500 dark:text-neutral-300" />
     ),
   },
   {
