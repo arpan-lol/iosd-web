@@ -8,67 +8,7 @@ import { AlumniImpact } from "@/components/alumni/AlumniImpact"
 import { NotableAlumniV1 } from "@/components/alumni/NotableAlumniV1"
 import { NotableAlumniV2 } from "@/components/alumni/NotableAlumniV2"
 import { NotableAlumniV3 } from "@/components/alumni/NotableAlumniV3"
-
-import Meta from "@/public/logos/meta-3.svg"
-import Uber from "@/public/logos/uber-15.svg"
-import Apple from "@/public/logos/Apple_logo_white.svg"
-import ZS from "@/public/logos/zs.png"
-import PayPal from "@/public/logos/paypal.png"
-import Swiggy from "@/public/logos/swiggy.png"
-import Zomato from "@/public/logos/zomato.png"
-import Ion from "@/public/logos/ion.png"
-import Yamaha from "@/public/logos/yamaha.png"
-
-const companies = [
-  {
-    name: "Google",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
-  },
-  {
-    name: "Microsoft",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
-  },
-  {
-    name: "Amazon",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
-  },
-  {
-    name: "Zomato",
-    logo: Zomato,
-  },
-  {
-    name: "TCS ION",
-    logo: Ion
-  },
-  {
-    name: "Yamaha",
-    logo: Yamaha,
-  },
-  {
-    name: "Uber",
-    logo: Uber,
-  },
-  {
-    name: "Swiggy",
-    logo: Swiggy
-  },
-  {
-    name: "PayPal",
-    logo: PayPal,
-  },
-  {
-    name: "ZS",
-    logo: ZS,
-  },
-];
-
-
-const avatarUrls = [
-  { imageUrl: "https://avatars.githubusercontent.com/u/16860528", profileUrl: "#" },
-  { imageUrl: "https://avatars.githubusercontent.com/u/20110627", profileUrl: "#" },
-  { imageUrl: "https://avatars.githubusercontent.com/u/106103625", profileUrl: "#" },
-  { imageUrl: "https://avatars.githubusercontent.com/u/59228569", profileUrl: "#" },
-]
+import { ALUMNI_COMPANIES, ALUMNI_AVATARS } from "@/lib/config/alumni"
 
 export default function AlumniPage() {
   return (
@@ -87,7 +27,7 @@ export default function AlumniPage() {
           <div className="mt-4 flex items-center gap-6">
             <AvatarCircles
               numPeople={99}
-              avatarUrls={avatarUrls}
+              avatarUrls={ALUMNI_AVATARS}
             />
           </div>
         </div>
@@ -115,7 +55,7 @@ export default function AlumniPage() {
 
         <div className="relative overflow-hidden">
           <Marquee className="[--duration:24s]">
-            {companies.map((company) => (
+            {ALUMNI_COMPANIES.map((company) => (
               <div
                 key={company.name}
                 className={cn(

@@ -1,3 +1,12 @@
+import Uber from "@/public/logos/uber-15.svg"
+import ZS from "@/public/logos/zs.png"
+import PayPal from "@/public/logos/paypal.png"
+import Swiggy from "@/public/logos/swiggy.png"
+import Zomato from "@/public/logos/zomato.png"
+import Ion from "@/public/logos/ion.png"
+import Yamaha from "@/public/logos/yamaha.png"
+import { StaticImageData } from "next/image"
+
 export const NOTABLE_ALUMNI = [
   {
     name: "Arnav Gupta",
@@ -208,4 +217,64 @@ export const ALUMNI_IMPACT = [
     label: "Alumni",
     sublabel: "contributing to the tech ecosystem"
   },
+]
+
+export interface Company {
+  name: string
+  logo: string | StaticImageData
+}
+
+export const ALUMNI_COMPANIES: Company[] = [
+  {
+    name: "Google",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
+  },
+  {
+    name: "Microsoft",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
+  },
+  {
+    name: "Amazon",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
+  },
+  {
+    name: "Zomato",
+    logo: Zomato,
+  },
+  {
+    name: "TCS ION",
+    logo: Ion,
+  },
+  {
+    name: "Yamaha",
+    logo: Yamaha,
+  },
+  {
+    name: "Uber",
+    logo: Uber,
+  },
+  {
+    name: "Swiggy",
+    logo: Swiggy,
+  },
+  {
+    name: "PayPal",
+    logo: PayPal,
+  },
+  {
+    name: "ZS",
+    logo: ZS,
+  },
+]
+
+export interface AvatarUrl {
+  imageUrl: string
+  profileUrl: string
+}
+
+export const ALUMNI_AVATARS: AvatarUrl[] = [
+  { imageUrl: "/alumni/avatars/arnav.jpg", profileUrl: "#" },
+  { imageUrl: "/alumni/avatars/anjali.jpg", profileUrl: "#" },
+  { imageUrl: "/alumni/avatars/bhumika.jpg", profileUrl: "#" },
+  { imageUrl: "/alumni/avatars/jayant.jpg", profileUrl: "#" },
 ]
