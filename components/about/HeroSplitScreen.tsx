@@ -6,7 +6,7 @@ import { WordRotate } from "@/components/ui/word-rotate"
 
 export function HeroSplitScreen() {
   return (
-    <section className="relative flex items-center justify-center py-16 md:py-20">
+    <section className="relative flex items-center justify-center py-10 md:py-15">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center text-center space-y-6 md:space-y-8">
           {/* Logo - secondary */}

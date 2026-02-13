@@ -114,6 +114,13 @@ export const ABOUT_CONTENT = {
   },
 };
 
+export const FACULTY_COORDINATOR = {
+  name: "Ms. Garima Gupta",
+  role: "Faculty In-Charge, IOSD MAIT",
+  image: "/team/faculty-coordinator.jpg",
+  description: "Ms. Garima has been the guiding force behind IOSD MAIT, always standing as a constant source of support and encouragement for us. As the Faculty In-Charge, she has played a pivotal role in shaping the society with her dedication, guidance, and unwavering belief in the students. Her approachability and willingness to help at every step have motivated us to perform better and grow both personally and professionally. We are truly grateful for her continuous support, mentorship, and the positive environment she has fostered within IOSD.",
+};
+
 export const GALLERY_PREVIEW = [
   {
     src: "/gallery/impulse-25/cover.jpg",

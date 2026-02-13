@@ -9,11 +9,15 @@ import {
   TEAM_MEMBERS,
   ABOUT_CONTENT,
   DOMAINS,
+  FACULTY_COORDINATOR,
+  FAQ_ITEMS,
 } from "@/lib/config";
 import { WordRotate } from "@/components/ui/word-rotate";
 import CompleteTeamSection from './complete';
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 import { HeroSplitScreen } from "@/components/about/HeroSplitScreen";
+import { MagicCard } from "@/components/ui/magic-card";
+import { FAQSection } from "@/components/ui/faq-section";
 
 interface NotificationProps {
   name: string;
@@ -30,7 +34,7 @@ export default function AboutPage() {
       <HeroSplitScreen />
 
       {/* Mission & Vision Split */}
-      <section className="container mx-auto px-4 pt-16 md:pt-24">
+      <section className="container mx-auto px-4 py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h2 className="text-3xl font-light tracking-tight">{ABOUT_CONTENT.mission.title}</h2>
@@ -65,20 +69,45 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="container mx-auto px-4 pt-24 pb-16">
-        <div className="flex flex-col items-center gap-6 text-center mb-16 px-5">
-          <h1 className="text-5xl sm:text-7xl font-light tracking-tight leading-none">
-            Meet the Team
-          </h1>
-          <p className="max-w-xl text-muted-foreground text-lg">
-            The people shaping IOSD - quietly, deliberately, together.
-          </p>
+      {/* Faculty Coordinator */}
+      <section className="container mx-auto px-4 py-24">
+        <div className="max-w-4xl mx-auto">
+          <p className="mono text-xs uppercase tracking-widest text-muted-foreground mb-6">Faculty Coordinator</p>
+          <blockquote className="text-xl md:text-2xl font-light leading-relaxed text-foreground/90 border-l-2 border-primary/50 pl-6">
+            "{FACULTY_COORDINATOR.description}"
+          </blockquote>
+          <div className="flex items-center gap-4 mt-8">
+            <div className="h-14 w-14 border border-border bg-muted/20 flex items-center justify-center">
+              <span className="text-muted-foreground/50">📷</span>
+            </div>
+            <div>
+              <p className="font-medium">{FACULTY_COORDINATOR.name}</p>
+              <p className="mono text-xs text-muted-foreground">{FACULTY_COORDINATOR.role}</p>
+            </div>
+          </div>
         </div>
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      </section>
+
+      <section className="container mx-auto px-4 py-24">
+        <section className="relative flex h-[60vh] w-full flex-col items-center justify-center overflow-hidden">
+          <div className="flex flex-col items-center gap-6 text-center px-5">
+            <h1 className="text-5xl sm:text-7xl font-light tracking-tight leading-none">
+              Meet the{" "}
+              <WordRotate
+                className="inline-block font-light text-foreground"
+                words={["Builders", "Engineers", "Thinkers"]}
+              />
+            </h1>
+            <p className="max-w-xl text-muted-foreground text-lg">
+              The people shaping IOSD - quietly, deliberately, together.
+            </p>
+          </div>
+        </section>
+        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
           {TEAM_MEMBERS.map((member, index) => (
-            <div
+            <MagicCard
               key={index}
-              className="p-8 border border-blue-500/20 rounded-lg bg-slate-900/40 transition-colors hover:border-blue-500/40"
+              className="p-8"
             >
               <div className="flex flex-col items-center text-center">
                 {/* Avatar */}
@@ -103,23 +132,23 @@ export default function AboutPage() {
                 {/* Socials */}
                 <div className="mt-6 flex gap-5">
                   {member.socials.github && (
-                    <a href={member.socials.github} className="text-muted-foreground hover:text-foreground transition">
+                    <a href={member.socials.github} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition">
                       <Github className="h-4 w-4" />
                     </a>
                   )}
                   {member.socials.linkedin && (
-                    <a href={member.socials.linkedin} className="text-muted-foreground hover:text-foreground transition">
+                    <a href={member.socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition">
                       <Linkedin className="h-4 w-4" />
                     </a>
                   )}
                   {member.socials.twitter && (
-                    <a href={member.socials.twitter} className="text-muted-foreground hover:text-foreground transition">
+                    <a href={member.socials.twitter} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition">
                       <Twitter className="h-4 w-4" />
                     </a>
                   )}
                 </div>
               </div>
-            </div>
+            </MagicCard>
           ))}
         </div>
       </section>
@@ -139,6 +168,12 @@ export default function AboutPage() {
         </BentoGrid>
       </section>
 
+      {/* FAQ Section*/}
+      <FAQSection
+        items={FAQ_ITEMS}
+        title="Frequently Asked Questions"
+        subtitle="Everything you need to know about joining IOSD."
+      />
 
       {/* CTA Section */}
       <section className="container mx-auto px-4 py-24">
