@@ -3,18 +3,18 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { GALLERY_IMAGES, type GalleryImage } from "@/lib/config";
+import { GALLERY_IMAGES, getAllTags, type GalleryImage } from "@/lib/config";
 import { GalleryModal } from "@/components/gallery/GalleryModal";
 
 export default function GalleryPage() {
     const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
     const [filter, setFilter] = useState<string>("All");
 
-    const categories = ["All", ...Array.from(new Set(GALLERY_IMAGES.map((img) => img.category)))];
+    const tags = ["All", ...getAllTags()];
 
     const filteredImages = filter === "All"
         ? GALLERY_IMAGES
-        : GALLERY_IMAGES.filter((img) => img.category === filter);
+        : GALLERY_IMAGES.filter((img) => img.tags.includes(filter));
 
     return (
         <div className="min-h-screen bg-transparent">
@@ -27,26 +27,26 @@ export default function GalleryPage() {
                     Moments captured from our events, workshops, and activities
                 </p>
 
-                {/* Category Filter */}
+                {/* Tag Filter */}
                 <div className="mb-12 flex flex-wrap justify-center gap-3">
-                    {categories.map((category) => {
-                        const isActive = filter === category
+                    {tags.map((tag) => {
+                        const isActive = filter === tag
 
                         return (
                             <button
-                                key={category}
-                                onClick={() => setFilter(category)}
+                                key={tag}
+                                onClick={() => setFilter(tag)}
                                 className={cn(
                                     "cursor-target cursor-none relative px-5 py-2 mono transition-all",
                                     "border bg-background text-muted-foreground",
                                     "hover:text-foreground",
                                     isActive && [
                                         "text-foreground",
-                                        "border-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.3)]",
+                                        "border-accent shadow-[0_0_10px_var(--accent-soft)]",
                                     ]
                                 )}
                             >
-                                {category}
+                                {tag}
                             </button>
                         )
                     })}
@@ -61,7 +61,7 @@ export default function GalleryPage() {
                             className="break-inside-avoid cursor-pointer group"
                             onClick={() => setSelectedImage(image)}
                         >
-                            <div className="relative overflow-hidden rounded-lg bg-muted border border-blue-500/10 md:border-transparent group-hover:border-blue-500/30 transition-all">
+                            <div className="relative overflow-hidden rounded-lg bg-muted border border-accent/10 md:border-transparent group-hover:border-accent/30 transition-all">
                                 <Image
                                     src={image.src}
                                     alt={image.alt}
@@ -73,7 +73,7 @@ export default function GalleryPage() {
                                 <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                                     <div>
                                         <p className="text-foreground font-medium text-sm">{image.description}</p>
-                                        <p className="text-muted-foreground text-xs mt-1">{image.category}</p>
+                                        <p className="text-muted-foreground text-xs mt-1">{image.tags.join(", ")}</p>
                                     </div>
                                 </div>
                             </div>
@@ -83,7 +83,7 @@ export default function GalleryPage() {
             </div>
 
             <GalleryModal
-                images={GALLERY_IMAGES}
+                images={filteredImages}
                 selected={selectedImage}
                 onClose={() => setSelectedImage(null)}
                 onSelect={setSelectedImage}

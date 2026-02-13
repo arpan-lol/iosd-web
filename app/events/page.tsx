@@ -2,11 +2,11 @@
 
 import { useState } from "react"
 import { DotPattern } from "@/components/ui/dot-pattern"
-import { EVENTS } from "@/lib/config/events"
+import { EVENTS, type Event } from "@/lib/config/events"
 import { cn } from "@/lib/utils"
 import { EventPreviewCard } from "@/components/events/EventPreviewCard"
 import { GalleryModal } from "@/components/gallery/GalleryModal"
-import { GALLERY_IMAGES, type GalleryImage } from "@/lib/config"
+import { GALLERY_IMAGES, getEventImages, type GalleryImage } from "@/lib/config"
 import { UPCOMING_EVENT } from "@/lib/config/events"
 import { UpcomingEventCard } from "@/components/events/UpcomingEvent"
 import EventsTimeline from "@/components/events/EventsTimeline"
@@ -17,16 +17,31 @@ const recent = EVENTS.filter(e => !e.featured)
 
 export default function EventsPage() {
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null)
+  const [eventImages, setEventImages] = useState<GalleryImage[]>([])
 
-  const handleEventClick = (src: string) => {
-    if (GALLERY_IMAGES.length > 0) {
-      const image = GALLERY_IMAGES.find((event) => event.src === src)
-      if (!image) {
-        setSelectedImage(null)
-        return
+  const handleEventClick = (event: Event) => {
+    // Get all images tagged with this event's id
+    const images = getEventImages(event.id)
+    
+    if (images.length === 0) {
+      // Fallback: try to find cover image in gallery
+      const coverImage = GALLERY_IMAGES.find(img => img.src === event.coverImage)
+      if (coverImage) {
+        setEventImages([coverImage])
+        setSelectedImage(coverImage)
       }
-      setSelectedImage(image)
+      return
     }
+    
+    setEventImages(images)
+    // Find cover image in the filtered images, or use first image
+    const cover = images.find(img => img.src === event.coverImage) || images[0]
+    setSelectedImage(cover)
+  }
+
+  const handleCloseModal = () => {
+    setSelectedImage(null)
+    setEventImages([])
   }
 
   return (
@@ -80,7 +95,7 @@ export default function EventsPage() {
               key={event.id}
               event={event}
               priority
-              onClick={() => handleEventClick(event.coverImage)}
+              onClick={() => handleEventClick(event)}
             />
           ))}
         </div>
@@ -97,7 +112,7 @@ export default function EventsPage() {
             <EventPreviewCard
               key={event.id}
               event={event}
-              onClick={() => handleEventClick(event.coverImage)}
+              onClick={() => handleEventClick(event)}
             />
           ))}
         </div>
@@ -106,9 +121,9 @@ export default function EventsPage() {
       {/* More Events */}
 
       <GalleryModal
-        images={GALLERY_IMAGES}
+        images={eventImages}
         selected={selectedImage}
-        onClose={() => setSelectedImage(null)}
+        onClose={handleCloseModal}
         onSelect={setSelectedImage}
       />
 

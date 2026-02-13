@@ -47,7 +47,7 @@ export const EventLine = () => {
                                 <EventLineCard
                                     title={event.title}
                                     subtitle={event.category}
-                                    description={`Gallery: ${event.galleryCategory}`}
+                                    description={event.date}
                                     date={event.date}
                                     position={position}
                                     delay={index * 150}

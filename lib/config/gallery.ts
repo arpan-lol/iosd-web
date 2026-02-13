@@ -3,7 +3,7 @@ export interface GalleryImage {
   src: string;
   alt: string;
   description?: string;
-  category: string;
+  tags: string[];
   height: number; // relative height for masonry layout
 }
 
@@ -13,7 +13,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
     src: "/gallery/yash-gupta/cover.jpg",
     alt: "Yash Gupta Mentorship Session",
     description: "Yash Gupta's Mentorship Session",
-    category: "Workshops",
+    tags: ["yash-gupta-mentorship", "workshop"],
     height: 350,
   },
   {
@@ -21,7 +21,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
     src: "/gallery/career-darika/cover.jpg",
     alt: "IOSD x Career Width",
     description: "Career Width Talk",
-    category: "Seminars",
+    tags: ["career-width", "seminar"],
     height: 320,
   },
   {
@@ -29,7 +29,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
     src: "/gallery/impulse-25/cover.jpg",
     alt: "IMPULSE 25",
     description: "IMPULSE 25 Hackathon",
-    category: "Events",
+    tags: ["impulse-25", "hackathon"],
     height: 380,
   },
   {
@@ -37,7 +37,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
     src: "/gallery/xplode-25/cover.jpg",
     alt: "XPLODE 25",
     description: "XPLODE 25 Hackathon",
-    category: "Events",
+    tags: ["xplode-25", "hackathon"],
     height: 360,
   },
   {
@@ -45,7 +45,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
     src: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800",
     alt: "Team Collaboration Workshop",
     description: "Student collaboration during tech workshop",
-    category: "Workshops",
+    tags: ["workshop"],
     height: 340,
   },
   {
@@ -53,7 +53,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
     src: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800",
     alt: "Panel Discussion",
     description: "Industry experts panel discussion",
-    category: "Seminars",
+    tags: ["seminar"],
     height: 300,
   },
   {
@@ -61,7 +61,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
     src: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800",
     alt: "Hackathon Night",
     description: "Late night coding session at hackathon",
-    category: "Events",
+    tags: ["hackathon"],
     height: 390,
   },
   {
@@ -69,7 +69,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
     src: "https://images.unsplash.com/photo-1515169067868-5387ec356754?w=800",
     alt: "Code Review Session",
     description: "Peer code review and learning",
-    category: "Workshops",
+    tags: ["workshop"],
     height: 330,
   },
   {
@@ -77,7 +77,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
     src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800",
     alt: "Team Building Activity",
     description: "IOSD team bonding session",
-    category: "Community",
+    tags: ["community"],
     height: 360,
   },
   {
@@ -85,7 +85,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
     src: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800",
     alt: "Tech Talk Series",
     description: "Guest speaker tech talk",
-    category: "Seminars",
+    tags: ["seminar"],
     height: 310,
   },
   {
@@ -93,7 +93,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
     src: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800",
     alt: "Project Demo Day",
     description: "Students presenting their projects",
-    category: "Events",
+    tags: ["event"],
     height: 370,
   },
   {
@@ -101,7 +101,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
     src: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800",
     alt: "Coding Workshop",
     description: "Hands-on coding workshop session",
-    category: "Workshops",
+    tags: ["workshop"],
     height: 345,
   },
   {
@@ -109,7 +109,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
     src: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800",
     alt: "IOSD Meetup",
     description: "Monthly community meetup",
-    category: "Community",
+    tags: ["community"],
     height: 325,
   },
   {
@@ -117,7 +117,19 @@ export const GALLERY_IMAGES: GalleryImage[] = [
     src: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800",
     alt: "Innovation Summit",
     description: "Annual innovation and tech summit",
-    category: "Events",
+    tags: ["event"],
     height: 355,
   },
 ];
+
+// Helper to get all unique tags from gallery images
+export const getAllTags = (): string[] => {
+  const tagSet = new Set<string>();
+  GALLERY_IMAGES.forEach(img => img.tags.forEach(tag => tagSet.add(tag)));
+  return Array.from(tagSet).sort();
+};
+
+// Helper to get images for a specific event
+export const getEventImages = (eventId: string): GalleryImage[] => {
+  return GALLERY_IMAGES.filter(img => img.tags.includes(eventId));
+};

@@ -3,9 +3,8 @@ export type Event = {
   title: string
   date: string        // "Mar 2024"
   year: number
-  category: string
+  category: string    // Display category like "Hackathon", "Talk"
   coverImage: string
-  galleryCategory: string
   featured?: boolean
 }
 
@@ -17,7 +16,6 @@ export const EVENTS: Event[] = [
     year: 2025,
     category: "Mentorship",
     coverImage: "/gallery/yash-gupta/cover.jpg",
-    galleryCategory: "Workshops",
     featured: true,
   },
   {
@@ -27,7 +25,6 @@ export const EVENTS: Event[] = [
     year: 2025,
     category: "Talk",
     coverImage: "/gallery/career-darika/cover.jpg",
-    galleryCategory: "Seminars",
   },
   {
     id: "impulse-25",
@@ -36,7 +33,6 @@ export const EVENTS: Event[] = [
     year: 2025,
     category: "Hackathon",
     coverImage: "/gallery/impulse-25/cover.jpg",
-    galleryCategory: "Events",
   },
   {
     id: "xplode-25",
@@ -45,7 +41,6 @@ export const EVENTS: Event[] = [
     year: 2025,
     category: "Hackathon",
     coverImage: "/gallery/xplode-25/cover.jpg",
-    galleryCategory: "Events",
     featured: true
   },
 ]
