@@ -8,13 +8,11 @@ import {
   ABOUT_EVENTS,
   TEAM_MEMBERS,
   ABOUT_CONTENT,
-  DOMAINS,
   FACULTY_COORDINATOR,
   FAQ_ITEMS,
 } from "@/lib/config";
 import { WordRotate } from "@/components/ui/word-rotate";
 import CompleteTeamSection from './complete';
-import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 import { HeroSplitScreen } from "@/components/about/HeroSplitScreen";
 import { MagicCard } from "@/components/ui/magic-card";
 import { FAQSection } from "@/components/ui/faq-section";
@@ -154,19 +152,6 @@ export default function AboutPage() {
       </section>
 
       <CompleteTeamSection />
-
-
-      {/* Domains Bento Grid */}
-      <section className="container mx-auto px-4 py-24">
-        <h2 className="mb-12 text-3xl font-light tracking-tight text-center">
-          Technical Domains
-        </h2>
-        <BentoGrid className="lg:grid-rows-2">
-          {DOMAINS.map((feature) => (
-            <BentoCard key={feature.name} {...feature} />
-          ))}
-        </BentoGrid>
-      </section>
 
       {/* FAQ Section*/}
       <FAQSection

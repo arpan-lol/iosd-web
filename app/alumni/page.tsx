@@ -61,7 +61,7 @@ export default function AlumniPage() {
                 className={cn(
                   "mx-6 flex h-16 w-40 items-center justify-center",
                   "border border-accent/20 md:border-border text-sm mono",
-                  "text-muted-foreground hover:text-foreground transition hover:border-accent/40"
+                  "text-muted-foreground hover:text-foreground transition hover:border-accent/40 cursor-target"
                 )}
               >
                 <Image src={company.logo} alt={company.name} width={34} height={34} className="max-w-fit max-h-6 mr-3" />

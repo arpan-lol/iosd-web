@@ -148,6 +148,18 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Technical Domains */}
+      <section className="container mx-auto px-4 py-24">
+        <h2 className="mb-12 text-3xl font-light tracking-tight text-center">
+          Technical Domains
+        </h2>
+        <BentoGrid className="lg:grid-rows-2">
+          {DOMAINS.map((feature) => (
+            <BentoCard key={feature.name} {...feature} />
+          ))}
+        </BentoGrid>
+      </section>
+
       {/* Testimonials Section */}
       <section className="w-full">
         <Testimonial />
@@ -168,7 +180,7 @@ export default function Home() {
           {GALLERY_PREVIEW.map((item, index) => (
             <div
               key={index}
-              className={`relative overflow-hidden bg-muted group cursor-pointer border border-blue-500/20 md:border-transparent ${item.gridClass}`}
+              className={`relative overflow-hidden bg-muted group cursor-pointer cursor-target border border-accent/20 md:border-transparent ${item.gridClass}`}
             >
               <Image
                 src={item.src}

@@ -174,3 +174,56 @@ export const getAllTags = (): string[] => {
 export const getEventImages = (eventId: string): GalleryImage[] => {
   return GALLERY_IMAGES.filter(img => img.tags.includes(eventId));
 };
+
+// Landing page gallery preview grid
+export interface GalleryPreviewItem {
+  src: string;
+  alt: string;
+  label?: string;
+  gridClass: string;
+}
+
+export const GALLERY_PREVIEW: GalleryPreviewItem[] = [
+  {
+    src: "/gallery/impulse-25/cover.jpg",
+    alt: "IMPULSE 25",
+    label: "IMPULSE 25 Hackathon",
+    gridClass: "col-span-2 row-span-2",
+  },
+  {
+    src: "/gallery/impulse-25/cover.jpg",
+    alt: "Team Collaboration",
+    gridClass: "aspect-square",
+  },
+  {
+    src: "/gallery/xplode-25/cover.jpg",
+    alt: "XPLODE 25",
+    gridClass: "aspect-square",
+  },
+  {
+    src: "/gallery/xplode-25/cover.jpg",
+    alt: "Panel Discussion",
+    gridClass: "aspect-square",
+  },
+  {
+    src: "/gallery/yash-gupta/cover.jpg",
+    alt: "Workshop Session",
+    gridClass: "aspect-square",
+  },
+  {
+    src: "/gallery/career-darika/cover.jpg",
+    alt: "Career Width Talk",
+    label: "Career Width Talk",
+    gridClass: "col-span-2 aspect-[2/1]",
+  },
+  {
+    src: "/gallery/yash-gupta/cover.jpg",
+    alt: "Hackathon",
+    gridClass: "aspect-square",
+  },
+  {
+    src: "/gallery/career-darika/cover.jpg",
+    alt: "Project Demo",
+    gridClass: "aspect-square",
+  },
+];

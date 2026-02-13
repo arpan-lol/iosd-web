@@ -48,7 +48,7 @@ export function NotableAlumniV3() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className="cursor-target cursor-none group grid grid-cols-12 items-center gap-4 py-6 lg:py-8 border-b border-border/10 transition-all duration-300 hover:border-accent/30"
+              className="group grid grid-cols-12 items-center gap-4 py-6 lg:py-8 border-b border-border/10 transition-all duration-300"
             >
               {/* Index number */}
               <div className="col-span-1 hidden lg:block">
@@ -59,7 +59,7 @@ export function NotableAlumniV3() {
 
               {/* Name - large */}
               <div className="col-span-8 lg:col-span-5">
-                <span className="text-2xl lg:text-4xl font-light text-foreground group-hover:text-accent transition-colors duration-300">
+                <span className="cursor-target cursor-none text-2xl lg:text-4xl font-light text-foreground group-hover:text-accent transition-colors duration-300">
                   {person.name}
                 </span>
               </div>

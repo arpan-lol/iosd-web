@@ -36,7 +36,7 @@ export function AlumniImpact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.12, duration: 0.5 }}
-            className="group relative flex-1 bg-background py-12 lg:py-16 px-8 border-l border-border/20 first:border-l-0 hover:bg-accent/5 transition-all duration-500"
+            className="group relative flex-1 bg-background py-12 lg:py-16 px-8 border-l border-border/20 first:border-l-0 hover:bg-accent/5 transition-all duration-500 cursor-target"
           >
             {/* Top accent line */}
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
