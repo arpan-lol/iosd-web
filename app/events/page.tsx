@@ -75,7 +75,7 @@ export default function EventsPage() {
 
       {/* Upcoming Event */}
       {UPCOMING_EVENT && (
-        <section className="container mx-auto px-4 pt-8 pb-4">
+        <section id={UPCOMING_EVENT.id} className="container mx-auto px-4 pt-8 pb-4 scroll-mt-24">
           <h2 className="mb-8 text-3xl font-light tracking-tight">
             What's Next
           </h2>

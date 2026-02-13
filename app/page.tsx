@@ -17,12 +17,14 @@ import Image from "next/image";
 import { ScrollVelocityRow } from "@/components/ui/scroll-based-velocity";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import { FloatingEventPromo } from "@/components/events/FloatingEventPromo";
 
 
 export default function Home() {
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-transparent font-sans selection:bg-accent selection:text-background">
-      {/* <ScrollProgress className="top-0" /> */}
+      {/* Floating Event Promotion */}
+      <FloatingEventPromo />
 
       {/* Hero Section */}
       <section className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden pb-10 md:pb-32 pt-20">

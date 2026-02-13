@@ -75,6 +75,7 @@ export const EVENTS: Event[] = [
 ]
 
 export type UpcomingEvent = {
+  id: string
   title: string
   date: string
   description: string
@@ -84,6 +85,7 @@ export type UpcomingEvent = {
 }
 
 export const UPCOMING_EVENT: UpcomingEvent | null = {
+  id: "impulse-26",
   title: "IMPULSE 26",
   date: "Mar 2026",
   description:
