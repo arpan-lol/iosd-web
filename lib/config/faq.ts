@@ -2,7 +2,7 @@ export const FAQ_ITEMS = [
   {
     question: "What is IOSD?",
     answer:
-      "IOSD (International Organization of Software Developers) is a technical community at Maharaja Agrasen Institute of Technology. We're a group of passionate developers, designers, and engineers focused on learning, building, and growing together.",
+      "IOSD (International Organization of Software Developers) is a technical society at Maharaja Agrasen Institute of Technology. We're a group of passionate developers, designers, and engineers focused on learning, building, and growing together.",
   },
   {
     question: "How can I join IOSD?",

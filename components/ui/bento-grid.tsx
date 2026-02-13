@@ -35,7 +35,7 @@ const BentoGrid = ({ children, className, ...props }: BentoGridProps) => {
   )
 }
 
-// Simplified BentoCard - icon, name, and description
+// Floating Icon Badge style
 const BentoCard = ({ name, className, icon, description, ...props }: BentoCardProps) => {
   const Icon = ICON_MAP[icon]
 
@@ -43,16 +43,24 @@ const BentoCard = ({ name, className, icon, description, ...props }: BentoCardPr
     <div
       key={name}
       className={cn(
-        "relative col-span-3 flex flex-col justify-center overflow-hidden",
-        "border border-border/40 bg-transparent backdrop-blur-sm rounded-xl hover:bg-blue-500/5 transition-colors duration-300",
-        className,
+        "cursor-target cursor-none",
+        "group relative col-span-3 flex flex-col justify-end overflow-hidden",
+        "border border-border/50 bg-muted/10",
+        "hover:border-accent/30 hover:bg-accent/5 transition-all duration-300",
+        className
       )}
       {...props}
     >
+      {/* Floating icon badge */}
+      <div className="absolute top-4 right-4 h-12 w-12 border border-border/50 
+        bg-background flex items-center justify-center shadow-sm
+        group-hover:border-accent/50 group-hover:shadow-accent/10 transition-all">
+        {Icon && <Icon className="h-5 w-5 text-muted-foreground group-hover:text-accent transition-colors" />}
+      </div>
+      
       <div className="flex flex-col gap-2 p-6">
-        {Icon && <Icon className="h-12 w-12 text-foreground" />}
-        <h3 className="text-xl font-light tracking-tight">{name}</h3>
-        <p className="text-muted-foreground">{description}</p>
+        <h3 className="text-2xl font-light tracking-tight">{name}</h3>
+        <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
       </div>
     </div>
   )

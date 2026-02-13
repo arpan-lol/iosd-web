@@ -8,12 +8,12 @@ export const ABOUT_PREVIEW = {
   tagline: "Who We Are",
   title: "Building Tomorrow's Tech Leaders",
   description: "IOSD is where curiosity meets code. We're a student-driven community at MAIT dedicated to fostering real-world development skills through hands-on projects, hackathons, workshops, and peer mentorship. From web dev to ML, we build things that matter.",
-  highlights: [
-    "50+ workshops annually",
-    "National-level hackathons",
-    "Industry mentorship programs",
-  ],
-  image: "/gallery/impulse-25/cover.jpg",
+  // highlights: [
+  //   "50+ workshops annually",
+  //   "National-level hackathons",
+  //   "Industry mentorship programs",
+  // ],
+  image: "/hero/1.jpg",
 };
 
 export const DOMAINS = [

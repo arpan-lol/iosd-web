@@ -85,14 +85,6 @@ export default function Home() {
               {ABOUT_PREVIEW.description}
             </p>
 
-            {/* Highlights */}
-            <div className="flex flex-wrap gap-4 pt-4">
-              {ABOUT_PREVIEW.highlights.map((item, i) => (
-                <span key={i} className="mono text-xs px-4 py-2 border border-blue-500/20 md:border-border bg-surface-1">
-                  {item}
-                </span>
-              ))}
-            </div>
 
             <Link
               href="/about"
@@ -113,15 +105,15 @@ export default function Home() {
             className="col-span-12 lg:col-span-5 relative cursor-target"
             style={{ cursor: 'none' }}
           >
-            <div className="relative aspect-[3/4] overflow-hidden group">
+            <div className="relative aspect-[1/1] overflow-hidden group">
               <Image
                 src={ABOUT_PREVIEW.image}
                 alt="IOSD Community"
                 fill
                 className="object-cover transition-all duration-700 group-hover:scale-105 grayscale sepia-[0.3] group-hover:grayscale-0 group-hover:sepia-0"
               />
-              {/* Golden tint overlay */}
-              <div className="absolute inset-0 bg-amber-500/15 mix-blend-overlay transition-opacity duration-700 group-hover:opacity-0 pointer-events-none" />
+              {/* tint overlay */}
+              <div className="absolute inset-0 bg-blue-500/15 mix-blend-overlay transition-opacity duration-700 group-hover:opacity-0 pointer-events-none" />
               <div className="absolute inset-0 border border-border pointer-events-none" />
               {/* Corner accent */}
               <div className="absolute -bottom-3 -left-3 w-6 h-6 border-l-2 border-b-2 border-accent" />
