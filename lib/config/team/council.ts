@@ -1,4 +1,17 @@
-export const TEAM_MEMBERS = [
+export interface CouncilMemberSocials {
+  github: string;
+  linkedin: string;
+  twitter: string;
+}
+
+export interface CouncilMember {
+  name: string;
+  role: string;
+  image: string;
+  socials: CouncilMemberSocials;
+}
+
+export const COUNCIL_MEMBERS: CouncilMember[] = [
   {
     name: "Jayant Aggrawal",
     role: "Advisor",

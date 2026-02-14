@@ -6,13 +6,13 @@ import Image from "next/image"
 import { JoinUsButton } from "@/components/join-us-button";
 import {
   ABOUT_EVENTS,
-  TEAM_MEMBERS,
+  COUNCIL_MEMBERS,
   ABOUT_CONTENT,
   FACULTY_COORDINATOR,
   FAQ_ITEMS,
 } from "@/lib/config";
 import { WordRotate } from "@/components/ui/word-rotate";
-import CompleteTeamSection from './complete';
+import CoreTeamSection from '@/components/about/CoreTeamSection';
 import { HeroSplitScreen } from "@/components/about/HeroSplitScreen";
 import { MagicCard } from "@/components/ui/magic-card";
 import { FAQSection } from "@/components/ui/faq-section";
@@ -102,7 +102,7 @@ export default function AboutPage() {
           </div>
         </section>
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
-          {TEAM_MEMBERS.map((member, index) => (
+          {COUNCIL_MEMBERS.map((member, index) => (
             <MagicCard
               key={index}
               className="p-8"
@@ -151,7 +151,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <CompleteTeamSection />
+      <CoreTeamSection />
 
       {/* FAQ Section*/}
       <FAQSection
