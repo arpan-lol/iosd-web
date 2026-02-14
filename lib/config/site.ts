@@ -13,3 +13,9 @@ export const SITE_CONFIG = {
     joinUs: "Join Us",
   },
 }
+
+export const UI_CONFIG = {
+  dotPattern: {
+    opacity: 0, // 0-100
+  },
+}

@@ -76,7 +76,7 @@ export default function AboutPage() {
           </blockquote>
           <div className="flex items-center gap-4 mt-8">
             <div className="h-14 w-14 border border-border bg-muted/20 flex items-center justify-center">
-              <span className="text-muted-foreground/50">📷</span>
+             <img src={FACULTY_COORDINATOR.image} alt={FACULTY_COORDINATOR.role}/>
             </div>
             <div>
               <p className="font-medium">{FACULTY_COORDINATOR.name}</p>

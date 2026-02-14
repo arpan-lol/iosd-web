@@ -2,13 +2,16 @@
 
 import { Globe } from "@/components/ui/globe";
 import { RetroGrid } from "@/components/ui/retro-grid";
+import { DotPattern } from "@/components/ui/dot-pattern";
 import { BentoGrid, BentoCard } from "@/components/ui/bento-grid";
+import { cn } from "@/lib/utils";
 import {
   DOMAINS,
   ABOUT_STATS,
   GALLERY_PREVIEW,
   ABOUT_CONTENT,
   ABOUT_PREVIEW,
+  UI_CONFIG,
 } from "@/lib/config";
 import { NumberTicker } from "@/components/ui/number-ticker";
 import { Testimonial } from "@/components/ui/design-testimonial";
@@ -22,7 +25,7 @@ import { FloatingEventPromo } from "@/components/events/FloatingEventPromo";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-transparent font-sans selection:bg-accent selection:text-background">
+    <div className="relative min-h-screen w-full overflow-hidden bg-transparent font-sans">
       {/* Floating Event Promotion */}
       <FloatingEventPromo />
 
@@ -59,6 +62,14 @@ export default function Home() {
         <div className="hidden md:block absolute bottom-0 left-0 right-0 h-[500px] w-full translate-y-[20%] opacity-60 pointer-events-none">
           <Globe className="top-20" />
         </div>
+
+        <DotPattern
+          className={cn(
+            `opacity-${UI_CONFIG.dotPattern.opacity}`,
+            "mask-[radial-gradient(600px_circle_at_center,white,transparent)]"
+          )}
+          style={{ opacity: UI_CONFIG.dotPattern.opacity / 100 }}
+        />
       </section>
 
 

@@ -9,6 +9,7 @@ import { NotableAlumniV1 } from "@/components/alumni/NotableAlumniV1"
 import { NotableAlumniV2 } from "@/components/alumni/NotableAlumniV2"
 import { NotableAlumniV3 } from "@/components/alumni/NotableAlumniV3"
 import { ALUMNI_COMPANIES, ALUMNI_AVATARS } from "@/lib/config/alumni"
+import { UI_CONFIG } from "@/lib/config"
 
 export default function AlumniPage() {
   return (
@@ -34,9 +35,9 @@ export default function AlumniPage() {
 
         <DotPattern
           className={cn(
-            "[mask-image:radial-gradient(500px_circle_at_center,white,transparent_70%)]",
-            "opacity-20"
+            "[mask-image:radial-gradient(500px_circle_at_center,white,transparent_70%)]"
           )}
+          style={{ opacity: UI_CONFIG.dotPattern.opacity / 100 }}
         />
       </section>
 

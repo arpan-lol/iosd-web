@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { DotPattern } from "@/components/ui/dot-pattern"
 import { EVENTS, type Event } from "@/lib/config/events"
+import { UI_CONFIG } from "@/lib/config"
 import { cn } from "@/lib/utils"
 import { EventPreviewCard } from "@/components/events/EventPreviewCard"
 import { GalleryModal } from "@/components/gallery/GalleryModal"
@@ -66,9 +67,9 @@ export default function EventsPage() {
 
         <DotPattern
           className={cn(
-            "opacity-40",
             "mask-[radial-gradient(600px_circle_at_center,white,transparent)]"
           )}
+          style={{ opacity: UI_CONFIG.dotPattern.opacity / 100 }}
         />
 
       </section>

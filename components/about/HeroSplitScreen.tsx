@@ -3,6 +3,9 @@
 import { motion } from "motion/react"
 import Image from "next/image"
 import { WordRotate } from "@/components/ui/word-rotate"
+import { DotPattern } from "@/components/ui/dot-pattern"
+import { cn } from "@/lib/utils"
+import { UI_CONFIG } from "@/lib/config"
 
 export function HeroSplitScreen() {
   return (
@@ -42,6 +45,13 @@ export function HeroSplitScreen() {
           </motion.div>
         </div>
       </div>
+
+      <DotPattern
+        className={cn(
+          "mask-[radial-gradient(600px_circle_at_center,white,transparent)]"
+        )}
+        style={{ opacity: UI_CONFIG.dotPattern.opacity / 100 }}
+      />
     </section>
   )
 }
