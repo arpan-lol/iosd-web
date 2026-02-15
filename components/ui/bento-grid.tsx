@@ -4,16 +4,6 @@ import type React from "react"
 
 import type { ComponentPropsWithoutRef, ReactNode } from "react"
 import { cn } from "@/lib/utils"
-import { FaCode, FaDatabase } from "react-icons/fa"
-import { GiBrain } from "react-icons/gi"
-import { TbBinaryTree } from "react-icons/tb"
-
-const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
-  FaCode,
-  FaDatabase,
-  GiBrain,
-  TbBinaryTree,
-}
 
 interface BentoGridProps extends ComponentPropsWithoutRef<"div"> {
   children: ReactNode
@@ -23,7 +13,7 @@ interface BentoGridProps extends ComponentPropsWithoutRef<"div"> {
 interface BentoCardProps extends ComponentPropsWithoutRef<"div"> {
   name: string
   className: string
-  icon: string
+  icon: React.ComponentType<{ className?: string }>
   description: string
 }
 
@@ -36,9 +26,7 @@ const BentoGrid = ({ children, className, ...props }: BentoGridProps) => {
 }
 
 // Floating Icon Badge style
-const BentoCard = ({ name, className, icon, description, ...props }: BentoCardProps) => {
-  const Icon = ICON_MAP[icon]
-
+const BentoCard = ({ name, className, icon: Icon, description, ...props }: BentoCardProps) => {
   return (
     <div
       key={name}
@@ -55,7 +43,7 @@ const BentoCard = ({ name, className, icon, description, ...props }: BentoCardPr
       <div className="absolute top-4 right-4 h-12 w-12 border border-border/50 
         bg-background flex items-center justify-center shadow-sm
         group-hover:border-accent/50 group-hover:shadow-accent/10 transition-all">
-        {Icon && <Icon className="h-5 w-5 text-muted-foreground group-hover:text-accent transition-colors" />}
+        <Icon className="h-5 w-5 text-muted-foreground group-hover:text-accent transition-colors" />
       </div>
       
       <div className="flex flex-col gap-2 p-6">

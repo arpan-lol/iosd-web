@@ -53,16 +53,16 @@ export default function AboutPage() {
                 <Notification {...item} key={idx} />
               ))}
             </AnimatedList>
-          </div> */}
+          </div> 
+          
+          may the odds be ever in your favour
+          
+          */
+          }
 
           {/* Placeholder Image */}
-          <div className="relative flex h-[500px] w-full items-center justify-center overflow-hidden border border-border bg-muted/20">
-            <div className="flex flex-col items-center gap-4 text-muted-foreground/50">
-              <div className="h-16 w-16 border-2 border-dashed border-muted-foreground/30 flex items-center justify-center">
-                <span className="text-2xl">📷</span>
-              </div>
-              <p className="mono text-xs">Photo</p>
-            </div>
+          <div className="relative flex h-[500px] w-full items-center justify-center overflow-hidden cursor-target">
+            <img src="/hero/samrat-bhaiya.jpg" className="w-full h-full object-cover" />
           </div>
         </div>
       </section>
@@ -76,7 +76,7 @@ export default function AboutPage() {
           </blockquote>
           <div className="flex items-center gap-4 mt-8">
             <div className="h-14 w-14 border border-border bg-muted/20 flex items-center justify-center">
-             <img src={FACULTY_COORDINATOR.image} alt={FACULTY_COORDINATOR.role}/>
+              <img src={FACULTY_COORDINATOR.image} alt={FACULTY_COORDINATOR.role} />
             </div>
             <div>
               <p className="font-medium">{FACULTY_COORDINATOR.name}</p>

@@ -135,7 +135,8 @@ function CoreTeamMemberItem({ member }: CoreTeamMemberItemProps) {
   return (
     <div
       ref={itemRef}
-      className="team-member-item group relative cursor-pointer py-4 border-b border-gray-200 dark:border-gray-800 last:border-b-0 transition-colors hover:bg-gray-50 dark:hover:bg-gray-900/50"
+      className="team-member-item group relative cursor-pointer py-4 border-b border-gray-200 dark:border-gray-800 last:border-b-0 transition-colors hover:bg-gray-50 dark:hover:bg-gray-900/50 cursor-target"
+      style={{ cursor: 'none' }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

@@ -3,6 +3,9 @@ import {
   Calendar,
   Trophy,
 } from "lucide-react";
+import { FaCode, FaDatabase } from "react-icons/fa";
+import { GiBrain } from "react-icons/gi";
+import { TbBinaryTree } from "react-icons/tb";
 
 export const ABOUT_PREVIEW = {
   tagline: "Who We Are",
@@ -13,30 +16,33 @@ export const ABOUT_PREVIEW = {
   //   "National-level hackathons",
   //   "Industry mentorship programs",
   // ],
-  image: "/hero/1.jpg",
+  images: {
+    main: "/hero/2.jpg",
+    secondary: ["/hero/3.JPG", "/hero/4.jpg"],
+  },
 };
 
 export const DOMAINS = [
   {
-    icon: "FaCode",
+    icon: FaCode,
     name: "Web Development",
     description: "Building modern, scalable web applications using the latest tech stacks.",
     className: "lg:col-span-2",
   },
   {
-    icon: "GiBrain",
+    icon: GiBrain,
     name: "Machine Learning",
     description: "Building intelligent systems and exploring artificial intelligence.",
     className: "lg:col-span-1",
   },
   {
-    icon: "TbBinaryTree",
+    icon: TbBinaryTree,
     name: "DSA & CP",
     description: "Mastering algorithms and competing in global coding contests.",
     className: "lg:col-span-1",
   },
   {
-    icon: "FaDatabase",
+    icon: FaDatabase,
     name: "Data Science",
     description: "Analyzing data and extracting insights through statistical methods.",
     className: "lg:col-span-2",
@@ -44,34 +50,34 @@ export const DOMAINS = [
 ];
 
 export const ABOUT_EVENTS = [
-  {
-    name: "Event 1",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    time: "Upcoming",
-    icon: "🚀",
-    color: "#00C9A7",
-  },
-  {
-    name: "Event 2",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    time: "Ongoing",
-    icon: "💻",
-    color: "#FFB800",
-  },
-  {
-    name: "Event 3",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    time: "2m ago",
-    icon: "🏆",
-    color: "#FF3D71",
-  },
-  {
-    name: "Event 4",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    time: "5m ago",
-    icon: "🎤",
-    color: "#1E86FF",
-  },
+  // {
+  //   name: "Event 1",
+  //   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  //   time: "Upcoming",
+  //   icon: "🚀",
+  //   color: "#00C9A7",
+  // },
+  // {
+  //   name: "Event 2",
+  //   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  //   time: "Ongoing",
+  //   icon: "💻",
+  //   color: "#FFB800",
+  // },
+  // {
+  //   name: "Event 3",
+  //   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  //   time: "2m ago",
+  //   icon: "🏆",
+  //   color: "#FF3D71",
+  // },
+  // {
+  //   name: "Event 4",
+  //   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  //   time: "5m ago",
+  //   icon: "🎤",
+  //   color: "#1E86FF",
+  // },
 ];
 
 export const ABOUT_STATS = [

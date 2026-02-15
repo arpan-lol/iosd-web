@@ -16,6 +16,6 @@ export const SITE_CONFIG = {
 
 export const UI_CONFIG = {
   dotPattern: {
-    opacity: 0, // 0-100
+    opacity: 40, // 0-100
   },
 }

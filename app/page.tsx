@@ -99,9 +99,10 @@ export default function Home() {
             </p>
 
 
+            <div className="pt-8">
             <Link
               href="/about"
-              className="group/line inline-flex items-center gap-4 pt-8 pr-6 cursor-target"
+              className="group/line inline-flex items-center gap-4 cursor-target"
               style={{ cursor: 'none' }}
             >
               <div className="w-12 h-[1px] bg-muted-foreground group-hover/line:bg-accent transition-colors duration-500" />
@@ -110,9 +111,10 @@ export default function Home() {
               </span>
               <ArrowRight className="w-4 h-4 group-hover/line:text-accent transition-all duration-300" />
             </Link>
+            </div>
           </div>
 
-          {/* Accent Image */}
+          {/* Main Image */}
           <Link 
             href="/about" 
             className="col-span-12 lg:col-span-5 relative cursor-target"
@@ -120,19 +122,44 @@ export default function Home() {
           >
             <div className="relative aspect-[1/1] overflow-hidden group">
               <Image
-                src={ABOUT_PREVIEW.image}
+                src={ABOUT_PREVIEW.images.main}
                 alt="IOSD Community"
                 fill
                 className="object-cover transition-all duration-700 group-hover:scale-105"
               />
-              {/* tint overlay
-              <div className="absolute inset-0 bg-blue-500/15 mix-blend-overlay transition-opacity duration-700 group-hover:opacity-0 pointer-events-none" /> */}
-              <div className="absolute inset-0 border border-border pointer-events-none" />
-              {/* Corner accent */}
-              <div className="absolute -bottom-3 -left-3 w-6 h-6 border-l-2 border-b-2 border-accent" />
-              <div className="absolute -top-3 -right-3 w-6 h-6 border-t-2 border-r-2 border-accent" />
             </div>
           </Link>
+
+          {/* Secondary inline images */}
+          <div className="col-span-12 grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <Link 
+              href="/about" 
+              className="overflow-hidden group cursor-target inline-block"
+              style={{ cursor: 'none' }}
+            >
+              <Image
+                src={ABOUT_PREVIEW.images.secondary[0]}
+                alt="IOSD Events"
+                width={800}
+                height={450}
+                className="w-full h-auto transition-all duration-700 group-hover:scale-105"
+              />
+            </Link>
+
+            <Link 
+              href="/about" 
+              className="overflow-hidden group cursor-target inline-block"
+              style={{ cursor: 'none' }}
+            >
+              <Image
+                src={ABOUT_PREVIEW.images.secondary[1]}
+                alt="IOSD Workshop"
+                width={800}
+                height={450}
+                className="w-full h-auto transition-all duration-700 group-hover:scale-105"
+              />
+            </Link>
+          </div>
         </div>
       </section>
 
