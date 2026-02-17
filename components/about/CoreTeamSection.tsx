@@ -154,6 +154,7 @@ function CoreTeamMemberItem({ member }: CoreTeamMemberItemProps) {
           {member.name}
         </span>
       </div>
+      
 
       {isHovered && (
         <div className="hidden sm:block absolute right-48 top-1/2 -translate-y-1/2 z-50">
