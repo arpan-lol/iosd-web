@@ -23,7 +23,7 @@ export function GalleryBridge() {
         <div className="flex gap-6 px-6">
           {images.map((img) => (
             <div
-              key={img.id}
+              key={img.src}
               onClick={() => setSelected(img)}
               className={cn(
                 "group cursor-pointer cursor-target",

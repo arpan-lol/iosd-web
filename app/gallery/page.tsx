@@ -55,9 +55,9 @@ export default function GalleryPage() {
 
                 {/* Masonry Grid */}
                 <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4">
-                    {filteredImages.map((image) => (
+                    {filteredImages.map((image, index) => (
                         <div
-                            key={image.id}
+                            key={image.src}
                             className="break-inside-avoid cursor-pointer group cursor-target"
                             onClick={() => setSelectedImage(image)}
                         >
@@ -73,7 +73,6 @@ export default function GalleryPage() {
                                 <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                                     <div>
                                         <p className="text-foreground font-medium text-sm">{image.description}</p>
-                                        <p className="text-muted-foreground text-xs mt-1">{image.tags.join(", ")}</p>
                                     </div>
                                 </div>
                             </div>

@@ -38,35 +38,30 @@
  * - getAllTags(): Returns all unique tags for filter UI
  * - getEventImages(eventId): Returns images for a specific event
  */
-
 export interface GalleryImage {
-  id: number;
   src: string;
   alt: string;
   description?: string;
   tags: string[];
   height: number; // relative height for masonry layout
 }
-
 export const GALLERY_IMAGES: GalleryImage[] = [
+  // === Event Covers (local) ===
   {
-    id: 1,
     src: "/gallery/yash-gupta/cover.jpg",
     alt: "Yash Gupta Mentorship Session",
-    description: "Yash Gupta's Mentorship Session",
-    tags: ["yash-gupta-mentorship", "workshop"],
+    description: "Internship Mentorship Session",
+    tags: ["seminar"],
     height: 350,
   },
   {
-    id: 2,
     src: "/gallery/career-darika/cover.jpg",
     alt: "IOSD x Career Width",
-    description: "Career Width Talk",
-    tags: ["career-width", "seminar"],
+    description: "LinkedIn Optimization Seminar",
+    tags: ["seminar"],
     height: 320,
   },
   {
-    id: 3,
     src: "/gallery/impulse-25/cover.jpg",
     alt: "IMPULSE 25",
     description: "IMPULSE 25 Hackathon",
@@ -74,107 +69,253 @@ export const GALLERY_IMAGES: GalleryImage[] = [
     height: 380,
   },
   {
-    id: 4,
     src: "/gallery/xplode-25/cover.jpg",
     alt: "XPLODE 25",
     description: "XPLODE 25 Hackathon",
-    tags: ["xplode-25", "hackathon"],
+    tags: ["xplode-25"],
     height: 360,
   },
+  // === Xplode 25
   {
-    id: 5,
-    src: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800",
-    alt: "Team Collaboration Workshop",
-    description: "Student collaboration during tech workshop",
-    tags: ["workshop"],
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772721011/24_odlqxe.jpg",
+    alt: "Xplode 25",
+    tags: ["xplode-25", "event"],
+    height: 320,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772721010/23_p3om25.jpg",
+    alt: "Xplode 25",
+    tags: ["xplode-25", "event"],
+    height: 400,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772721009/22_zyassb.jpg",
+    alt: "Xplode 25",
+    tags: ["xplode-25", "event"],
     height: 340,
   },
   {
-    id: 6,
-    src: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800",
-    alt: "Panel Discussion",
-    description: "Industry experts panel discussion",
-    tags: ["seminar"],
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772721008/21_ybddff.jpg",
+    alt: "Xplode 25",
+    tags: ["xplode-25", "event"],
+    height: 320,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772721006/20_y6nqga.jpg",
+    alt: "Xplode 25",
+    tags: ["xplode-25", "event"],
     height: 300,
   },
   {
-    id: 7,
-    src: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800",
-    alt: "Hackathon Night",
-    description: "Late night coding session at hackathon",
-    tags: ["hackathon"],
-    height: 390,
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772721006/19_izpoic.jpg",
+    alt: "Xplode 25",
+    tags: ["xplode-25", "event"],
+    height: 320,
   },
   {
-    id: 8,
-    src: "https://images.unsplash.com/photo-1515169067868-5387ec356754?w=800",
-    alt: "Code Review Session",
-    description: "Peer code review and learning",
-    tags: ["workshop"],
-    height: 330,
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772721004/17_cmhvp4.jpg",
+    alt: "Xplode 25",
+    tags: ["xplode-25", "event"],
+    height: 320,
   },
   {
-    id: 9,
-    src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800",
-    alt: "Team Building Activity",
-    description: "IOSD team bonding session",
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772721004/18_fpffhd.jpg",
+    alt: "Xplode 25",
+    tags: ["xplode-25", "event"],
+    height: 400,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772721003/16_m5atfw.jpg",
+    alt: "Xplode 25",
+    tags: ["xplode-25", "event"],
+    height: 320,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772721002/15_z2tsag.jpg",
+    alt: "Xplode 25",
+    tags: ["xplode-25", "event"],
+    height: 400,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772721001/14_ztmjeh.jpg",
+    alt: "Xplode 25",
+    tags: ["xplode-25", "event"],
+    height: 400,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772721000/13_imdbul.jpg",
+    alt: "Xplode 25",
+    tags: ["xplode-25", "event"],
+    height: 320,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772720999/12_gyhql5.jpg",
+    alt: "Xplode 25",
+    tags: ["xplode-25", "event"],
+    height: 320,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772720998/11_g6xim0.jpg",
+    alt: "Xplode 25",
+    tags: ["xplode-25", "event"],
+    height: 320,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772720998/10_it6nve.jpg",
+    alt: "Xplode 25",
+    tags: ["xplode-25", "event"],
+    height: 320,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772720997/9_mm8dky.jpg",
+    alt: "Xplode 25",
+    tags: ["xplode-25", "event"],
+    height: 320,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772720995/8_yo6vnn.jpg",
+    alt: "Xplode 25",
+    tags: ["xplode-25", "event"],
+    height: 400,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772720994/6_bkfnsa.jpg",
+    alt: "Xplode 25",
+    tags: ["xplode-25", "event"],
+    height: 320,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772720994/7_wdhvzr.jpg",
+    alt: "Xplode 25",
+    tags: ["xplode-25", "event"],
+    height: 400,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772720994/5_s5cfil.jpg",
+    alt: "Xplode 25",
+    tags: ["xplode-25", "event"],
+    height: 320,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772720993/4_uy99fd.jpg",
+    alt: "Xplode 25",
+    tags: ["xplode-25", "event"],
+    height: 400,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772720993/3_fypv9i.jpg",
+    alt: "Xplode 25",
+    tags: ["xplode-25", "event"],
+    height: 400,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772720993/2_a60zyu.jpg",
+    alt: "Xplode 25",
+    tags: ["xplode-25", "event"],
+    height: 400,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772720993/1_mjdxwv.jpg",
+    alt: "Xplode 25",
+    tags: ["xplode-25", "event"],
+    height: 400,
+  },
+  // === Group / Community (Cloudinary) ===
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772722290/37_wy6fo8.jpg",
+    alt: "IOSD Community",
     tags: ["community"],
-    height: 360,
+    height: 320,
   },
   {
-    id: 10,
-    src: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800",
-    alt: "Tech Talk Series",
-    description: "Guest speaker tech talk",
-    tags: ["seminar"],
-    height: 310,
-  },
-  {
-    id: 11,
-    src: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800",
-    alt: "Project Demo Day",
-    description: "Students presenting their projects",
-    tags: ["event"],
-    height: 370,
-  },
-  {
-    id: 12,
-    src: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800",
-    alt: "Coding Workshop",
-    description: "Hands-on coding workshop session",
-    tags: ["workshop"],
-    height: 345,
-  },
-  {
-    id: 13,
-    src: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800",
-    alt: "IOSD Meetup",
-    description: "Monthly community meetup",
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772722289/35_frn2bl.jpg",
+    alt: "IOSD Community",
     tags: ["community"],
-    height: 325,
+    height: 350,
   },
   {
-    id: 14,
-    src: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800",
-    alt: "Innovation Summit",
-    description: "Annual innovation and tech summit",
-    tags: ["event"],
-    height: 355,
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772722289/36_phb2ew.jpg",
+    alt: "IOSD Community",
+    tags: ["community"],
+    height: 340,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772722286/34_n8grf3.jpg",
+    alt: "IOSD Community",
+    tags: ["community"],
+    height: 340,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772722286/33_wcizsk.jpg",
+    alt: "IOSD Community",
+    tags: ["community"],
+    height: 400,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772722285/32_cqto2b.jpg",
+    alt: "IOSD Community",
+    tags: ["community"],
+    height: 340,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772721805/31_dmmqdb.jpg",
+    alt: "IOSD Community",
+    tags: ["community"],
+    height: 320,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772721804/30_xssw20.jpg",
+    alt: "IOSD Community",
+    tags: ["community"],
+    height: 320,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772721801/28_embtyi.jpg",
+    alt: "IOSD Community",
+    tags: ["community"],
+    height: 320,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772721793/22_ohyb0r.jpg",
+    alt: "IOSD Community",
+    tags: ["community"],
+    height: 320,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772721782/13_g2crty.jpg",
+    alt: "IOSD Community",
+    tags: ["community"],
+    height: 320,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772721777/9_ikektf.jpg",
+    alt: "IOSD Community",
+    tags: ["community"],
+    height: 320,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772721776/8_f818nz.jpg",
+    alt: "IOSD Community",
+    tags: ["community"],
+    height: 320,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772721772/2_io3cdg.jpg",
+    alt: "IOSD Community",
+    tags: ["community"],
+    height: 320,
   },
 ];
-
 // Helper to get all unique tags from gallery images
 export const getAllTags = (): string[] => {
   const tagSet = new Set<string>();
   GALLERY_IMAGES.forEach(img => img.tags.forEach(tag => tagSet.add(tag)));
   return Array.from(tagSet).sort();
 };
-
 // Helper to get images for a specific event
 export const getEventImages = (eventId: string): GalleryImage[] => {
   return GALLERY_IMAGES.filter(img => img.tags.includes(eventId));
 };
-
 // Landing page gallery preview grid
 export interface GalleryPreviewItem {
   src: string;
@@ -182,48 +323,47 @@ export interface GalleryPreviewItem {
   label?: string;
   gridClass: string;
 }
-
 export const GALLERY_PREVIEW: GalleryPreviewItem[] = [
   {
-    src: "/gallery/impulse-25/cover.jpg",
-    alt: "IMPULSE 25",
-    label: "IMPULSE 25 Hackathon",
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772720997/9_mm8dky.jpg",
+    alt: "Xplode 25",
+    label: "XPLODE 25",
     gridClass: "col-span-2 row-span-2",
   },
   {
-    src: "/gallery/impulse-25/cover.jpg",
-    alt: "Team Collaboration",
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772721008/21_ybddff.jpg",
+    alt: "Xplode 25",
     gridClass: "aspect-square",
   },
   {
-    src: "/gallery/xplode-25/cover.jpg",
-    alt: "XPLODE 25",
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772722290/37_wy6fo8.jpg",
+    alt: "IOSD Community",
     gridClass: "aspect-square",
   },
   {
-    src: "/gallery/xplode-25/cover.jpg",
-    alt: "Panel Discussion",
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772720994/5_s5cfil.jpg",
+    alt: "Xplode 25",
     gridClass: "aspect-square",
   },
   {
-    src: "/gallery/yash-gupta/cover.jpg",
-    alt: "Workshop Session",
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772721805/31_dmmqdb.jpg",
+    alt: "IOSD Community",
     gridClass: "aspect-square",
   },
   {
-    src: "/gallery/career-darika/cover.jpg",
-    alt: "Career Width Talk",
-    label: "Career Width Talk",
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772721804/30_xssw20.jpg",
+    alt: "IOSD Community",
+    label: "Community",
     gridClass: "col-span-2 aspect-[2/1]",
   },
   {
-    src: "/gallery/yash-gupta/cover.jpg",
-    alt: "Hackathon",
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772721000/13_imdbul.jpg",
+    alt: "Xplode 25",
     gridClass: "aspect-square",
   },
   {
-    src: "/gallery/career-darika/cover.jpg",
-    alt: "Project Demo",
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772722289/35_frn2bl.jpg",
+    alt: "IOSD Community",
     gridClass: "aspect-square",
   },
 ];
