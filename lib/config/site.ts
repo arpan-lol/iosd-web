@@ -14,6 +14,14 @@ export const SITE_CONFIG = {
   },
 }
 
+export const HERO_CONFIG = {
+  image: {
+    desktop: "/hero/samrat-bhaiya.JPG",
+    mobile: "/hero/1.JPG",
+  },
+  subtitle: "Maharaja Agrasen Institute of Technology",
+}
+
 export const UI_CONFIG = {
   dotPattern: {
     opacity: 40, // 0-100

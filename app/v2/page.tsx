@@ -1,5 +1,8 @@
 "use client";
 
+import { Globe } from "@/components/ui/globe";
+import { RetroGrid } from "@/components/ui/retro-grid";
+import { DotPattern } from "@/components/ui/dot-pattern";
 import { BentoGrid, BentoCard } from "@/components/ui/bento-grid";
 import { cn } from "@/lib/utils";
 import {
@@ -8,7 +11,7 @@ import {
   GALLERY_PREVIEW,
   ABOUT_CONTENT,
   ABOUT_PREVIEW,
-  HERO_CONFIG,
+  UI_CONFIG,
 } from "@/lib/config";
 import { NumberTicker } from "@/components/ui/number-ticker";
 import { Testimonial } from "@/components/ui/design-testimonial";
@@ -27,40 +30,46 @@ export default function Home() {
       <FloatingEventPromo />
 
       {/* Hero Section */}
-      <section className="relative flex h-screen w-full flex-col items-center justify-start overflow-hidden">
-        {/* Background cover image */}
-        <Image
-          src={HERO_CONFIG.image.desktop}
-          alt="IOSD Hero"
-          fill
-          className="object-cover hidden md:block"
-          priority
-        />
-        <Image
-          src={HERO_CONFIG.image.mobile}
-          alt="IOSD Hero"
-          fill
-          className="object-cover md:hidden"
-          priority
+      <section className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden pb-10 md:pb-32 pt-20">
+        <RetroGrid
+          className="[mask-image:radial-gradient(ellipse_at_center,black,transparent_80%)] opacity-30"
         />
 
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="z-10 flex flex-col items-center gap-8 text-center px-6 w-full mt-[-50vh] md:mt-0">
+          <div className="relative flex items-center justify-center w-full">
+            {/* Mobile Globe - Centered behind logo */}
+            <div className="md:hidden absolute inset-0 flex items-center justify-center pointer-events-none opacity-60 scale-150">
+              <Globe />
+            </div>
 
-        {/* Logo + subtitle at top center */}
-        <div className="z-10 flex flex-col items-center gap-4 pt-24 px-6">
-          <Image
-            src="/IOSD_HD.png"
-            alt="IOSD Logo"
-            width={1079}
-            height={280}
-            className="h-auto w-auto max-w-[85vw] sm:max-w-lg md:max-w-2xl object-contain brightness-0 invert"
-            priority
-          />
-          <p className="text-lg sm:text-2xl md:text-3xl font-light text-white/80 tracking-tight">
-            {HERO_CONFIG.subtitle}
-          </p>
+            <Image
+              src="/IOSD_HD.png"
+              alt="IOSD Logo"
+              width={1079}
+              height={280}
+              className="h-auto w-auto max-w-[85vw] sm:max-w-lg md:max-w-xl object-contain animate-fade-in scale-110 md:scale-140 z-10"
+              priority
+            />
+          </div>
+
+          <div className="text-lg sm:text-2xl md:text-3xl font-light text-muted-foreground max-w-2xl px-4 z-10 bg-background/20 backdrop-blur-[2px] rounded-full py-1">
+            Maharaja Agrasen Institute of Technology
+            <br className="hidden sm:block" />
+          </div> 
         </div>
+
+        {/* Desktop Globe - Bottom anchored */}
+        <div className="hidden md:block absolute bottom-0 left-0 right-0 h-[500px] w-full translate-y-[20%] opacity-60 pointer-events-none">
+          <Globe className="top-20" />
+        </div>
+
+        <DotPattern
+          className={cn(
+            `opacity-${UI_CONFIG.dotPattern.opacity}`,
+            "mask-[radial-gradient(600px_circle_at_center,white,transparent)]"
+          )}
+          style={{ opacity: UI_CONFIG.dotPattern.opacity / 100 }}
+        />
       </section>
 
 
