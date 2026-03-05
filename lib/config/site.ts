@@ -16,7 +16,8 @@ export const SITE_CONFIG = {
 
 export const HERO_CONFIG = {
   image: {
-    desktop: "/hero/samrat-bhaiya.JPG",
+    // desktop: "/hero/samrat-bhaiya.JPG",
+    desktop: "https://res.cloudinary.com/djqkhf152/image/upload/v1772717816/samrat-bhaiya_dwra7a.jpg",
     mobile: "/hero/1.JPG",
   },
   subtitle: "Maharaja Agrasen Institute of Technology",

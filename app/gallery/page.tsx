@@ -58,7 +58,7 @@ export default function GalleryPage() {
                     {filteredImages.map((image) => (
                         <div
                             key={image.id}
-                            className="break-inside-avoid cursor-pointer group"
+                            className="break-inside-avoid cursor-pointer group cursor-target"
                             onClick={() => setSelectedImage(image)}
                         >
                             <div className="relative overflow-hidden rounded-lg bg-muted border border-accent/10 md:border-transparent group-hover:border-accent/30 transition-all">

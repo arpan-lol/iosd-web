@@ -17,8 +17,10 @@ export const ABOUT_PREVIEW = {
   //   "Industry mentorship programs",
   // ],
   images: {
-    main: "/hero/2.jpg",
-    secondary: ["/hero/3.JPG", "/hero/4.jpg"],
+    main: "https://res.cloudinary.com/djqkhf152/image/upload/v1772718926/2_50_qft1j6.jpg",
+    // main: "/hero/2.jpg",
+    // secondary: ["/hero/3.JPG", "/hero/4.jpg"],
+    secondary: ["https://res.cloudinary.com/djqkhf152/image/upload/v1772718926/3_50_kzotvf.jpg", "https://res.cloudinary.com/djqkhf152/image/upload/v1772718926/1_50_hmdzxr.jpg"],
   },
 };
 

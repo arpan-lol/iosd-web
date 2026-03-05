@@ -26,7 +26,7 @@ export function GalleryBridge() {
               key={img.id}
               onClick={() => setSelected(img)}
               className={cn(
-                "group cursor-pointer",
+                "group cursor-pointer cursor-target",
                 "h-64 w-96 shrink-0 overflow-hidden",
                 "border border-border bg-muted"
               )}
