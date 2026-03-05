@@ -70,11 +70,11 @@ export default function GalleryPage() {
                                     className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
                                     unoptimized
                                 />
-                                <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                                    <div>
-                                        <p className="text-foreground font-medium text-sm">{image.description}</p>
-                                    </div>
-                                </div>
+                                {image.description && (
+                                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <p className="text-white font-medium text-sm">{image.description}</p>
+                                  </div>
+                                )}
                             </div>
                         </div>
                     ))}

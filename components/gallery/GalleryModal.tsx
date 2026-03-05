@@ -18,7 +18,7 @@ export function GalleryModal({
   onClose,
   onSelect,
 }: GalleryModalProps) {
-  const currentIndex = images.findIndex(img => img?.id === selected?.id)
+  const currentIndex = images.findIndex(img => img?.src === selected?.src)
   const hasPrev = currentIndex > 0
   const hasNext = currentIndex < images.length - 1
 
