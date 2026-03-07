@@ -192,9 +192,9 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="w-full">
+      {/* <section className="w-full">
         <Testimonial />
-      </section>
+      </section> */}
 
       {/* Gallery Section */}
       <section className="container mx-auto px-4 py-24">

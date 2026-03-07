@@ -41,9 +41,9 @@ export default function AlumniPage() {
         />
       </section>
 
-      <NotableAlumniV1 />
+      {/* <NotableAlumniV1 /> */}
       <NotableAlumniV2 />
-      <NotableAlumniV3 />
+      {/* <NotableAlumniV3 /> */}
       {/* <NotableAlumni /> */}
 
       {/* Companies */}

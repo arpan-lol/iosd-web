@@ -2,7 +2,7 @@ export const SITE_CONFIG = {
   name: 'IOSD MAIT',
   description:
     'International Organization of Software Developers at Maharaja Agrasen Institute of Technology. Empowering developers worldwide.',
-  email: 'contact@iosd.iosd',
+  email: 'iosdmait@gmail.com',
   copyright: `© ${new Date().getFullYear()} IOSD. All rights reserved.`,
   metadata: {
     title: 'IOSD - International Organization of Software Developers',

@@ -151,7 +151,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <CoreTeamSection />
+      {/* <CoreTeamSection /> */}
 
       {/* FAQ Section*/}
       <FAQSection
