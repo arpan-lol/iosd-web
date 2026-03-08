@@ -14,6 +14,7 @@ export const NOTABLE_ALUMNI = [
     role: "",
     current: "Google",
     link: "https://www.linkedin.com/in/arnav-gupta-b1715121b",
+    image: "https://res.cloudinary.com/djqkhf152/image/upload/v1772966966/arnav_ai1rvt.jpg",
   },
   {
     name: "Kashvi Garg",
@@ -21,6 +22,7 @@ export const NOTABLE_ALUMNI = [
     role: "",
     current: "Google",
     link: "https://www.linkedin.com/in/kashvi-garg-2k3",
+    image: "https://res.cloudinary.com/djqkhf152/image/upload/v1772966946/kashvi_garg_xdinls.jpg",
   },
   {
     name: "Arham Jain",
@@ -28,6 +30,7 @@ export const NOTABLE_ALUMNI = [
     role: "",
     current: "Amazon",
     link: "https://www.linkedin.com/in/arham--jain",
+    image: "https://res.cloudinary.com/djqkhf152/image/upload/v1772966966/arham_jain_cy98i8.jpg",
   },
   {
     name: "Ayush Gupta",
@@ -35,6 +38,7 @@ export const NOTABLE_ALUMNI = [
     role: "",
     current: "Amazon",
     link: "https://www.linkedin.com/in/ayush-gupta-057368186",
+    image: "https://res.cloudinary.com/djqkhf152/image/upload/v1772966945/ayush_gupta_ovudaq.jpg",
   },
   {
     name: "Sparsh Chadha",
@@ -42,6 +46,7 @@ export const NOTABLE_ALUMNI = [
     role: "",
     current: "Zomato",
     link: "https://www.linkedin.com/in/sparsh-chadha-330643204",
+    image: "https://res.cloudinary.com/djqkhf152/image/upload/v1772966965/sparsh_chadha_xjedrn.jpg",
   },
   {
     name: "Darpan Chanana",
@@ -49,6 +54,7 @@ export const NOTABLE_ALUMNI = [
     role: "",
     current: "Swiggy",
     link: "https://www.linkedin.com/in/darpan-chanana-058914201",
+    image: "https://res.cloudinary.com/djqkhf152/image/upload/v1772966945/darpan_chanana_qpfuks.jpg",
   },
   {
     name: "Sachin Poonia",
@@ -56,6 +62,7 @@ export const NOTABLE_ALUMNI = [
     role: "",
     current: "Zeta",
     link: "https://www.linkedin.com/in/sachin-poonia-7482a01bb",
+    image: "https://res.cloudinary.com/djqkhf152/image/upload/v1772966947/sachin_poonia_x2gczt.jpg",
   },
   {
     name: "Aditya Gupta",
@@ -63,6 +70,7 @@ export const NOTABLE_ALUMNI = [
     role: "",
     current: "ZS",
     link: "https://www.linkedin.com/in/aditya-guptaa",
+    image: "https://res.cloudinary.com/djqkhf152/image/upload/v1772966966/aditya_gupta_tqyhjh.png",
   },
   {
     name: "Anjali Gupta",
@@ -70,6 +78,7 @@ export const NOTABLE_ALUMNI = [
     role: "",
     current: "ZS",
     link: "https://www.linkedin.com/in/anjali-gupta-254814203",
+    image: "https://res.cloudinary.com/djqkhf152/image/upload/v1772966966/anjali_rl3lca.jpg",
   },
   {
     name: "Jatin Bhatt",
@@ -77,6 +86,7 @@ export const NOTABLE_ALUMNI = [
     role: "",
     current: "Infosys",
     link: "https://www.linkedin.com/in/jatin-bhatt-711aa1194",
+    image: "https://res.cloudinary.com/djqkhf152/image/upload/v1772966946/jatin_bhatt_rohzjf.jpg",
   },
   {
     name: "Chaitanya Bisht",
@@ -84,6 +94,7 @@ export const NOTABLE_ALUMNI = [
     role: "",
     current: "United Airlines",
     link: "https://www.linkedin.com/in/chaitanyabisht",
+    image: "https://res.cloudinary.com/djqkhf152/image/upload/v1772966945/chaitanya_bisht_v5i46v.jpg",
   },
   {
     name: "Atharva Rana",
@@ -91,6 +102,7 @@ export const NOTABLE_ALUMNI = [
     role: "",
     current: "AngelOne",
     link: "https://www.linkedin.com/in/atharvarana",
+    image: "https://res.cloudinary.com/djqkhf152/image/upload/v1772966977/atharva_rana_xq3fh2.jpg",
   },
   {
     name: "Bhumika Arora",
@@ -98,6 +110,7 @@ export const NOTABLE_ALUMNI = [
     role: "",
     current: "Yamaha",
     link: "https://www.linkedin.com/in/bhumika-arora-a0aa92222",
+    image: "https://res.cloudinary.com/djqkhf152/image/upload/v1772966945/bhumika_gufueb.jpg",
   },
   {
     name: "Jiya Verma",
@@ -105,6 +118,7 @@ export const NOTABLE_ALUMNI = [
     role: "",
     current: "ION",
     link: "https://www.linkedin.com/in/jiyaverma",
+    image: "https://res.cloudinary.com/djqkhf152/image/upload/v1772966945/jiya_verma_svwhyt.jpg",
   },
   {
     name: "Karanjot Singh",
@@ -112,6 +126,7 @@ export const NOTABLE_ALUMNI = [
     role: "",
     current: "FNZ",
     link: "https://www.linkedin.com/in/karanjot-s",
+    image: "https://res.cloudinary.com/djqkhf152/image/upload/v1772966946/karanjot_singh_y3bgzd.jpg",
   },
   {
     name: "Jai Sukheja",
@@ -119,6 +134,7 @@ export const NOTABLE_ALUMNI = [
     role: "",
     current: "Xceedance",
     link: "https://www.linkedin.com/in/jaisukheja02",
+    image: "https://res.cloudinary.com/djqkhf152/image/upload/v1772966946/jai_sukheja_tuzvg6.jpg",
   },
   {
     name: "Keshav Chahal",
@@ -126,6 +142,7 @@ export const NOTABLE_ALUMNI = [
     role: "",
     current: "Extreme",
     link: "https://www.linkedin.com/in/keshav-chahal-884237125",
+    image: "https://res.cloudinary.com/djqkhf152/image/upload/v1772966946/keshav_chahal_k9cyny.jpg",
   },
   {
     name: "Jivesh Lakhani",
@@ -133,6 +150,7 @@ export const NOTABLE_ALUMNI = [
     role: "",
     current: "Candid",
     link: "https://www.linkedin.com/in/jivesh-lakhani",
+    image: "https://res.cloudinary.com/djqkhf152/image/upload/v1772966945/jivesh_lakhani_ljhysk.jpg",
   },
   {
     name: "Paramhans Singh",
@@ -140,6 +158,7 @@ export const NOTABLE_ALUMNI = [
     role: "",
     current: "Optimus",
     link: "https://www.linkedin.com/in/paramhans-singh13",
+    image: "https://res.cloudinary.com/djqkhf152/image/upload/v1772966947/paramhans_singh_hhwljj.jpg",
   },
   {
     name: "Kushagra Jain",
@@ -147,6 +166,7 @@ export const NOTABLE_ALUMNI = [
     role: "",
     current: "Stellar",
     link: "https://www.linkedin.com/in/kushagrajain58",
+    image: "https://res.cloudinary.com/djqkhf152/image/upload/v1772966947/kushagra_jain_mrrys7.jpg",
   },
   {
     name: "Ashish Yadav",
@@ -154,6 +174,7 @@ export const NOTABLE_ALUMNI = [
     role: "",
     current: "Karya",
     link: "https://www.linkedin.com/in/criticalay",
+    image: "https://res.cloudinary.com/djqkhf152/image/upload/v1772966967/ashish_yadav_r5x6p2.jpg",
   },
   {
     name: "Sumit Singh",
@@ -161,6 +182,7 @@ export const NOTABLE_ALUMNI = [
     role: "",
     current: "Grayweb",
     link: "https://www.linkedin.com/in/sumit8031",
+    image: "https://res.cloudinary.com/djqkhf152/image/upload/v1772966966/sumit_singh_kz2wca.jpg",
   },
   {
     name: "Simran Arora",
@@ -168,6 +190,7 @@ export const NOTABLE_ALUMNI = [
     role: "",
     current: "hypercode",
     link: "https://www.linkedin.com/in/simran-arora-28125b258",
+    image: "https://res.cloudinary.com/djqkhf152/image/upload/v1772966953/simran_arora_pre4cc.jpg",
   },
   {
     name: "Jayant Aggarwal",
@@ -175,6 +198,7 @@ export const NOTABLE_ALUMNI = [
     role: "",
     current: "",
     link: "https://www.linkedin.com/in/jayant-aggarwal-418910248",
+    image: "https://res.cloudinary.com/djqkhf152/image/upload/v1772966946/jayant_evskhm.jpg",
   },
   {
     name: "Keshav Goyal",
@@ -182,6 +206,7 @@ export const NOTABLE_ALUMNI = [
     role: "",
     current: "",
     link: "https://www.linkedin.com/in/keshav-goyal-481004250",
+    image: "https://res.cloudinary.com/djqkhf152/image/upload/v1772966946/keshav_goyal_uir6fr.jpg",
   },
   {
     name: "Pratishtha Gupta",
@@ -189,6 +214,7 @@ export const NOTABLE_ALUMNI = [
     role: "",
     current: "",
     link: "https://www.linkedin.com/in/pratishtha-gupta-8a8b29250",
+    image: "https://res.cloudinary.com/djqkhf152/image/upload/v1772966947/pratishtha_o3wjxn.jpg",
   },
 ]
 
@@ -273,8 +299,8 @@ export interface AvatarUrl {
 }
 
 export const ALUMNI_AVATARS: AvatarUrl[] = [
-  { imageUrl: "/alumni/avatars/arnav.jpg", profileUrl: "#" },
-  { imageUrl: "/alumni/avatars/anjali.jpg", profileUrl: "#" },
-  { imageUrl: "/alumni/avatars/bhumika.jpg", profileUrl: "#" },
-  { imageUrl: "/alumni/avatars/jayant.jpg", profileUrl: "#" },
+  { imageUrl: "https://res.cloudinary.com/djqkhf152/image/upload/v1772966966/arnav_ai1rvt.jpg", profileUrl: "#" },
+  { imageUrl: "https://res.cloudinary.com/djqkhf152/image/upload/v1772966966/anjali_rl3lca.jpg", profileUrl: "#" },
+  { imageUrl: "https://res.cloudinary.com/djqkhf152/image/upload/v1772966945/bhumika_gufueb.jpg", profileUrl: "#" },
+  { imageUrl: "https://res.cloudinary.com/djqkhf152/image/upload/v1772966946/jayant_evskhm.jpg", profileUrl: "#" },
 ]
