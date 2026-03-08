@@ -103,7 +103,6 @@ export function GalleryModal({
           width={1200}
           height={800}
           className="w-full h-auto max-h-[80vh] object-contain"
-          unoptimized
         />
 
         {selected.description && (

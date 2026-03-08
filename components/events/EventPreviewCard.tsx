@@ -29,7 +29,6 @@ export function EventPreviewCard({ event, priority, onClick }: EventPreviewCardP
             height={500}
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
             loading={priority ? "eager" : "lazy"}
-            unoptimized
           />
 
           {/* Hover veil */}

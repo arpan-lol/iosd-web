@@ -37,7 +37,6 @@ export function GalleryBridge() {
                 width={384}
                 height={256}
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                unoptimized
               />
             </div>
           ))}

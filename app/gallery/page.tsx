@@ -1,20 +1,36 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { GALLERY_IMAGES, getAllTags, type GalleryImage } from "@/lib/config";
 import { GalleryModal } from "@/components/gallery/GalleryModal";
 
+const IMAGES_PER_PAGE = 12;
+
 export default function GalleryPage() {
     const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
     const [filter, setFilter] = useState<string>("All");
+    const [visibleCount, setVisibleCount] = useState<number>(IMAGES_PER_PAGE);
 
-    const tags = ["All", ...getAllTags()];
+    const tags = useMemo(() => ["All", ...getAllTags()], []);
 
-    const filteredImages = filter === "All"
-        ? GALLERY_IMAGES
-        : GALLERY_IMAGES.filter((img) => img.tags.includes(filter));
+    const filteredImages = useMemo(() => {
+        return filter === "All"
+            ? GALLERY_IMAGES
+            : GALLERY_IMAGES.filter((img) => img.tags.includes(filter));
+    }, [filter]);
+
+    const visibleImages = filteredImages.slice(0, visibleCount);
+
+    const handleFilterChange = (tag: string) => {
+        setFilter(tag);
+        setVisibleCount(IMAGES_PER_PAGE);
+    };
+
+    const handleLoadMore = () => {
+        setVisibleCount((prev) => prev + IMAGES_PER_PAGE);
+    };
 
     return (
         <div className="min-h-screen bg-transparent">
@@ -35,7 +51,7 @@ export default function GalleryPage() {
                         return (
                             <button
                                 key={tag}
-                                onClick={() => setFilter(tag)}
+                                onClick={() => handleFilterChange(tag)}
                                 className={cn(
                                     "cursor-target cursor-none relative px-5 py-2 mono transition-all",
                                     "border bg-background text-muted-foreground",
@@ -54,8 +70,8 @@ export default function GalleryPage() {
 
 
                 {/* Masonry Grid */}
-                <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4">
-                    {filteredImages.map((image, index) => (
+                <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4 w-full">
+                    {visibleImages.map((image, index) => (
                         <div
                             key={image.src}
                             className="break-inside-avoid cursor-pointer group cursor-target"
@@ -67,8 +83,8 @@ export default function GalleryPage() {
                                     alt={image.alt}
                                     width={400}
                                     height={image.height}
+                                    loading="lazy"
                                     className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
-                                    unoptimized
                                 />
                                 {image.description && (
                                   <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -79,6 +95,18 @@ export default function GalleryPage() {
                         </div>
                     ))}
                 </div>
+
+                {/* Load More Button */}
+                {visibleCount < filteredImages.length && (
+                    <div className="mt-12 flex justify-center w-full">
+                        <button
+                            onClick={handleLoadMore}
+                            className="cursor-target cursor-none relative px-5 py-2 mono transition-all border bg-background text-muted-foreground hover:text-foreground"
+                        >
+                            Load More
+                        </button>
+                    </div>
+                )}
             </div>
 
             <GalleryModal
