@@ -68,10 +68,10 @@ export const GALLERY_IMAGES: GalleryImage[] = [
     width: 3008, height: 2000,
   },
   {
-    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772721011/24_odlqxe.jpg",
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772720993/2_a60zyu.jpg",
     alt: "Xplode 25",
     tags: ["xplode-25", "event"],
-    width: 3000, height: 2000,
+    width: 2000, height: 3008,
   },
   {
     src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772721004/18_fpffhd.jpg",
@@ -108,12 +108,6 @@ export const GALLERY_IMAGES: GalleryImage[] = [
     alt: "Xplode 25",
     tags: ["xplode-25", "event"],
     width: 3008, height: 938,
-  },
-  {
-    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772721006/19_izpoic.jpg",
-    alt: "Xplode 25",
-    tags: ["xplode-25", "event"],
-    width: 3008, height: 2000,
   },
   {
     src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772721004/17_cmhvp4.jpg",
@@ -188,10 +182,16 @@ export const GALLERY_IMAGES: GalleryImage[] = [
     width: 2000, height: 3008,
   },
   {
-    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772720993/2_a60zyu.jpg",
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772721011/24_odlqxe.jpg",
     alt: "Xplode 25",
     tags: ["xplode-25", "event"],
-    width: 2000, height: 3008,
+    width: 3000, height: 2000,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772721006/19_izpoic.jpg",
+    alt: "Xplode 25",
+    tags: ["xplode-25", "event"],
+    width: 3008, height: 2000,
   },
   {
     src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772720993/1_mjdxwv.jpg",
@@ -243,12 +243,12 @@ export const GALLERY_IMAGES: GalleryImage[] = [
     tags: ["seminar"],
     width: 3008, height: 2000,
   },
-  {
-    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772732101/6_sux8qs.jpg",
-    alt: "LinkedIn Optimization Seminar",
-    tags: ["seminar"],
-    width: 3008, height: 2000,
-  },
+  // {
+  //   src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772732101/6_sux8qs.jpg",
+  //   alt: "LinkedIn Optimization Seminar",
+  //   tags: ["seminar"],
+  //   width: 3008, height: 2000,
+  // }, (is a cover already)
   {
     src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772732113/13_op5tja.jpg",
     alt: "LinkedIn Optimization Seminar",
@@ -367,18 +367,19 @@ export const GALLERY_IMAGES: GalleryImage[] = [
 
   // === Event Covers ===
   {
-    src: "/gallery/yash-gupta/cover.jpg",
+    // src: "/gallery/yash-gupta/cover.jpg",
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772988010/3_bccmpi.jpg",
     alt: "Yash Gupta Mentorship Session",
     description: "Internship Mentorship Session",
     tags: ["seminar"],
-    width: 640, height: 1136,
+    width: 1512, height: 2016,
   },
   {
-    src: "/gallery/career-darika/cover.jpg",
-    alt: "IOSD x Career Width",
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772732101/6_sux8qs.jpg",
+    alt: "LinkedIn Optimization Seminar",
     description: "LinkedIn Optimization Seminar",
     tags: ["seminar"],
-    width: 1440, height: 1440,
+    width: 3008, height: 2000,
   },
   {
     src: "/gallery/impulse-25/cover.jpg",
@@ -390,9 +391,83 @@ export const GALLERY_IMAGES: GalleryImage[] = [
   {
     src: "/gallery/xplode-25/cover.jpg",
     alt: "XPLODE 25",
-    description: "XPLODE 25 Hackathon",
+    description: "XPLODE 25 - The Orientation",
     tags: ["xplode-25"],
     width: 512, height: 512,
+  },
+
+  // === Yash bhaiya ka seminar ===
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772988010/1_hfbnhn.jpg",
+    alt: "IOSD Seminar",
+    tags: ["seminar"],
+    width: 1512, height: 2016,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772988009/2_inctmi.jpg",
+    alt: "IOSD Seminar",
+    tags: ["seminar"],
+    width: 1512, height: 830,
+  },
+  // {
+  //   src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772988010/3_bccmpi.jpg",
+  //   alt: "IOSD Seminar",
+  //   tags: ["seminar"],
+  //   width: 1512, height: 2016,
+  // }, (is a cover already)
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772988010/4_lfyz6q.jpg",
+    alt: "IOSD Seminar",
+    tags: ["seminar"],
+    width: 2016, height: 1512,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772988010/5_cbdklz.jpg",
+    alt: "IOSD Seminar",
+    tags: ["seminar"],
+    width: 2016, height: 1512,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772988011/6_kz5cop.jpg",
+    alt: "IOSD Seminar",
+    tags: ["seminar"],
+    width: 1512, height: 795,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772988011/7_uo12f2.jpg",
+    alt: "IOSD Seminar",
+    tags: ["seminar"],
+    width: 2016, height: 1512,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772988012/8_ygznow.jpg",
+    alt: "IOSD Seminar",
+    tags: ["seminar"],
+    width: 2016, height: 1512,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772988010/9_tm1l8a.jpg",
+    alt: "IOSD Seminar",
+    tags: ["seminar"],
+    width: 2016, height: 1512,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772988010/10_buq0rp.jpg",
+    alt: "IOSD Seminar",
+    tags: ["seminar"],
+    width: 2016, height: 1512,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772988011/11_wngwbg.jpg",
+    alt: "IOSD Seminar",
+    tags: ["seminar"],
+    width: 2016, height: 1512,
+  },
+  {
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772988012/12_nfuo1w.jpg",
+    alt: "IOSD Seminar",
+    tags: ["seminar"],
+    width: 2016, height: 1512,
   },
 ];
 // Helper to get all unique tags from gallery images
