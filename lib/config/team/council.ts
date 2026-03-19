@@ -103,16 +103,6 @@ export const COUNCIL_MEMBERS: CouncilMember[] = [
     },
   },
   {
-    name: "Tanishq Sethi",
-    role: "Operations Head",
-    image: "/team/council/tanishq-sethi.jpg",
-    socials: {
-      github: "",
-      linkedin: "https://www.linkedin.com/in/tanx1509/",
-      twitter: "",
-    },
-  },
-  {
     name: "Muskaan Aggarwal",
     role: "Joint Secretary",
     image: "/team/council/muskaan-aggarwal.jpg",

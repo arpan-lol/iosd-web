@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { DotPattern } from "@/components/ui/dot-pattern"
-import { EVENTS, type Event } from "@/lib/config/events"
+import { EVENT_GALLERY_TAGS, EVENTS, type Event } from "@/lib/config/events"
 import { UI_CONFIG } from "@/lib/config"
 import { cn } from "@/lib/utils"
 import { EventPreviewCard } from "@/components/events/EventPreviewCard"
@@ -20,9 +20,10 @@ export default function EventsPage() {
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null)
   const [eventImages, setEventImages] = useState<GalleryImage[]>([])
 
-  const handleEventClick = (event: Event) => {
-    // Get all images tagged with this event's id
-    const images = getEventImages(event.id)
+  const handleEventClick = (event: Event, eventIndex: number) => {
+    // Fetch modal images using the tag mapped to this event's array index.
+    const imageTag = EVENT_GALLERY_TAGS[eventIndex]
+    const images = imageTag ? getEventImages(imageTag) : []
     
     if (images.length === 0) {
       // Fallback: try to find cover image in gallery
@@ -91,12 +92,12 @@ export default function EventsPage() {
         </h2>
 
         <div className="grid gap-8 md:grid-cols-2">
-          {featured.map(event => (
+          {featured.map((event, index) => (
             <EventPreviewCard
-              key={event.id}
+              key={index}
               event={event}
               priority
-              onClick={() => handleEventClick(event)}
+              onClick={() => handleEventClick(event, EVENTS.indexOf(event))}
             />
           ))}
         </div>
@@ -109,11 +110,11 @@ export default function EventsPage() {
         </h2>
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {recent.map(event => (
+          {recent.map((event, index) => (
             <EventPreviewCard
-              key={event.id}
+              key={index}
               event={event}
-              onClick={() => handleEventClick(event)}
+              onClick={() => handleEventClick(event, EVENTS.indexOf(event))}
             />
           ))}
         </div>

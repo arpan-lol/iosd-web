@@ -175,14 +175,14 @@ export default function GalleryPage() {
                     ))}
                 </div>
 
-                {/* Load More Button */}
+                {/* See More Button */}
                 {visibleCount < filteredImages.length && (
                     <div className="mt-12 flex justify-center w-full">
                         <button
                             onClick={handleLoadMore}
                             className="cursor-target cursor-none relative px-5 py-2 mono transition-all border bg-background text-muted-foreground hover:text-foreground"
                         >
-                            Load More
+                            See More
                         </button>
                     </div>
                 )}

@@ -21,7 +21,7 @@ export const EventLine = () => {
                     const position = index % 2 === 0 ? "left" : "right";
 
                     return (
-                        <div key={event.id} className="relative">
+                        <div key={index} className="relative">
                             {/* Event Icon */}
                             <div className="absolute left-1/2 transform -translate-x-1/2 z-[1] hidden md:flex">
                                 <div

@@ -3,35 +3,31 @@
  * ====================
  * 
  * HOW TO ADD A NEW EVENT:
- * 1. Add event entry here with a unique `id` (kebab-case, e.g. "impulse-26")
- * 2. Set `coverImage` to the path of the cover image (must exist in public/gallery/)
- * 3. Add images to gallery.ts with the event's `id` in their `tags` array
+ * 1. Add event entry here in chronological display order
+ * 2. Set `coverImage` to the path or URL of the cover image
+ * 3. Update EVENT_GALLERY_TAGS using the same event index
  * 
  * RELATIONSHIP:
- * - Event.id links to GalleryImage.tags
- * - One event → many images (all images tagged with event.id)
+ * - Event index links to EVENT_GALLERY_TAGS[index]
+ * - EVENT_GALLERY_TAGS[index] links to GalleryImage.tags
  * - coverImage is explicitly set (not auto-picked from gallery)
  * 
  * FIELDS:
- * - id: Unique identifier, used to filter gallery images (MUST match tags in gallery.ts)
  * - title: Display name
  * - date: Human-readable date string (e.g. "March 2026")
- * - year: Numeric year for timeline grouping
  * - category: Display label like "Hackathon", "Talk", "Workshop"
  * - coverImage: Path to cover image (usually /gallery/{event-folder}/cover.jpg)
  * - featured?: Optional - shows in "Recent Highlights" section
  * 
  * GOTCHAS:
- * - If event.id doesn't match any gallery image tags, modal will only show coverImage
+ * - If EVENT_GALLERY_TAGS[index] doesn't match any gallery image tags, modal will only show coverImage
  * - coverImage path must exist in public/ folder
- * - Keep id consistent between here and gallery.ts tags
+ * - Keep EVENTS order and EVENT_GALLERY_TAGS order aligned
  */
 
 export type Event = {
-  id: string
   title: string
   date: string        // "Mar 2024"
-  year: number
   category: string    // Display category like "Hackathon", "Talk"
   coverImage: string
   featured?: boolean
@@ -39,39 +35,40 @@ export type Event = {
 
 export const EVENTS: Event[] = [
   {
-    id: "yash-gupta-mentorship",
-    title: "Yash Gupta's Mentorship Session",
+    title: "Internship Mentorship Session",
     date: "December 2025",
-    year: 2025,
-    category: "Mentorship",
-    coverImage: "/gallery/yash-gupta/cover.jpg",
+    category: "seminar",
+    coverImage: "https://res.cloudinary.com/djqkhf152/image/upload/v1772988010/3_bccmpi.jpg",
     featured: true,
   },
   {
-    id: "career-width",
-    title: "IOSD x Career Width",
+    title: "LinkedIn Optimization Seminar",
     date: "November 2025",
-    year: 2025,
-    category: "Talk",
-    coverImage: "/gallery/career-darika/cover.jpg",
+    category: "seminar",
+    coverImage: "https://res.cloudinary.com/djqkhf152/image/upload/v1772732101/6_sux8qs.jpg",
   },
   {
-    id: "impulse-25",
-    title: "IMPULSE 25",
+    title: "IMPULSE 2025",
     date: "October 2025",
-    year: 2025,
     category: "Hackathon",
     coverImage: "/gallery/impulse-25/cover.jpg",
   },
   {
-    id: "xplode-25",
     title: "XPLODE 25",
     date: "September 2025",
-    year: 2025,
-    category: "Hackathon",
-    coverImage: "/gallery/xplode-25/cover.jpg",
+    category: "Orientation",
+    coverImage: "https://res.cloudinary.com/djqkhf152/image/upload/v1772722286/34_n8grf3.jpg",
     featured: true
   },
+]
+
+// Index-based mapping for event modal image lookup.
+// Keep order aligned with EVENTS above.
+export const EVENT_GALLERY_TAGS: Array<string | null> = [
+  "seminar",
+  "seminar",
+  "impulse-25",
+  "xplode-25",
 ]
 
 export type UpcomingEvent = {
@@ -84,13 +81,4 @@ export type UpcomingEvent = {
   registrationOpen: boolean
 }
 
-export const UPCOMING_EVENT: UpcomingEvent | null = {
-  id: "impulse-26",
-  title: "IMPULSE 26",
-  date: "Mar 2026",
-  description:
-    "The flagship tech fest of IOSD MAIT",
-  coverImage: "/gallery/impulse-25/cover.jpg",
-  registerUrl: "",
-  registrationOpen: false,
-}
+export const UPCOMING_EVENT: UpcomingEvent | null = null

@@ -389,7 +389,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
     width: 1152, height: 1440,
   },
   {
-    src: "/gallery/xplode-25/cover.jpg",
+    src: "https://res.cloudinary.com/djqkhf152/image/upload/v1772722286/34_n8grf3.jpg",
     alt: "XPLODE 25",
     description: "XPLODE 25 - The Orientation",
     tags: ["xplode-25"],
