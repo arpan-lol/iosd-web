@@ -5,6 +5,7 @@ import SiteNav from "@/components/site-nav";
 import TargetCursor from "@/components/TargetCursor";
 import { Footer } from "@/components/footer";
 import { SITE_CONFIG } from "@/lib/config";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -62,6 +63,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <SiteNav />
+        <Analytics />
       </body>
     </html>
   );
